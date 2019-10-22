@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | welcome</title>
+  <title>html css js错题总结 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="welcome">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;10&#x2F;index.html">
+  <meta name="description" content="错题总结1.这个题没有错，但是感觉挺经典的还是总结一下 12345function A()&amp;#123;	this.do=function()&amp;#123;return &amp;apos;foo&amp;apos;;&amp;#125;;&amp;#125;A.prototype=function()&amp;#123;return &amp;apos;bar&amp;apos;;&amp;#125;;var x=new A().do();">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html css js错题总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;22&#x2F;html-css-js%E9%94%99%E9%A2%98%E6%80%BB%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
+<meta property="og:description" content="错题总结1.这个题没有错，但是感觉挺经典的还是总结一下 12345function A()&amp;#123;	this.do=function()&amp;#123;return &amp;apos;foo&amp;apos;;&amp;#125;;&amp;#125;A.prototype=function()&amp;#123;return &amp;apos;bar&amp;apos;;&amp;#125;;var x=new A().do();">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-22T06:41:21.865Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -141,76 +144,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-html-css-js错题总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      html css js错题总结
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/22/html-css-js%E9%94%99%E9%A2%98%E6%80%BB%E7%BB%93/" class="archive-article-date">
+
+        
+        <a href="/2019/10/22/html-css-js%E9%94%99%E9%A2%98%E6%80%BB%E7%BB%93/" class="archive-article-date">
   	<time datetime="2019-10-22T05:28:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/22/html-css-js%E9%94%99%E9%A2%98%E6%80%BB%E7%BB%93/">html css js错题总结</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="错题总结"><a href="#错题总结" class="headerlink" title="错题总结"></a>错题总结</h2><p>1.这个题没有错，但是感觉挺经典的还是总结一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function A()&#123;</span><br><span class="line">	this.do=function()&#123;return &apos;foo&apos;;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype=function()&#123;return &apos;bar&apos;;&#125;;</span><br><span class="line">var x=new A().do();</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>x的值是：A. bar B. 报错 C. foo D. undefined<br>正确答案： C<br><strong>解析</strong>：当调用A当中的一个方法时，现在A中寻找这个方法，没有的话再去A的原型对象中去寻找<br>A中有do()这个函数所以返回 ‘foo’</p>
+<p>2.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;</span><br><span class="line">	var a=b=5;</span><br><span class="line">&#125;)();</span><br><span class="line">console.log(b);</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
+<p>A. 5,5 B. undefined,undefined C. 5,undefined D. 5,Uncaught ReferenceError: a is not defined<br>正确答案：D<br><strong>解析</strong>：这儿是一个函数匿名自调用，然后可以拆分成 var a=b ;b=5; 因为b前面没有var,相当于全局声明。<br>a在函数自调用后销毁了，所以a是undefined，b是5。<br>在ES6中有了块的概念，var定义的变量可以跨块访问，不能跨函数访问，这里记混了。</p>
+<p>3.关于下列CSS选择器：ID选择器、类选择器、伪类选择器、标签名称选择器，排序正确的是()</p>
+<p><strong>解析</strong>：<br>ID选择器&gt;Class选择器=伪类&gt;标签名称选择器</p>
+<p>4.<br>以下哪些是javascript的全局函数：()<br>正确答案: A B C<br>A.escape<br>B.parseFloat<br>C.eval<br>D.setTimeout</p>
+<p><strong>解析</strong>：setTimeout是DOM提供的函数，因此D项错误，<br>javaScript提供了7个全局函数: scape( )、eval_r( )、isFinite( )、isNaN( )、parseFloat( )、parseInt( )、unescape( )。</p>
+<p>5.基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;link href=&quot;main1.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">	&lt;link href=&quot;main2.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<p>A. main1.css和main2.css同时开始加载，先加载完成的优先解析<br>B. 如果main1.css和main2.css中有相同的选择器规则，那么main2.css中的规则将合并main1.css的规则<br>C. main2.css只有在main1.css加载并解析后，才开始加载<br>D. 如果main1.css和main2.css中有相同的选择器规则，那么main2.css中的规则将被忽略<br>正确答案： AB</p>
+<p><strong>解析</strong>：link标签是同时加载的 script标签才会加载完一个再加载另一个</p>
+<p>6.解释型语言的特性：非独立，效率低。<br>解释性语言的程序不需要编译，在运行程序的时候才翻译，每个语句都是执行的时候才翻译。这样解释性语言每执行一次就需要逐行翻译一次，效率比较低。<br>JavaScript语言依赖执行环境，对于客户端来说是浏览器，对于服务端来说是node。</p>
+<p>7.<br>以下代码执行后，console 的输出是？<br>let x = 10;<br>let foo = () =&gt; {<br>console.log(x);<br>let x = 20;<br>x++;<br>}<br>foo();</p>
+<p>A. 抛出 ReferenceError<br>B. 10<br>C. 20<br>D. 21</p>
+<p>正确答案：A<br><strong>解析</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let foo = () =&gt; &#123;</span><br><span class="line">	let x;</span><br><span class="line">	console.log(x); //throws ReferenceError</span><br><span class="line">	x = 20;</span><br><span class="line">	x++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意let不同于var：</p>
+<ol>
+<li>var变量作用域为global或function scope，let可以在更小的范围内如block scope（如{ }括号内、for循环内）；</li>
+<li>var变量声明后会被隐式赋值undefined，而let变量声明后不会被初始化，直到显式的赋值表达式才会被初始化</li>
+</ol>
+<p>8.<br>hasOwnProperty： 是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。<br>isPrototypeOf : 是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false。</p>
+<p>9.<br>语句var arr=[a,b,c,d];执行后，数组arr中每项都是一个整数，下面得到其中最大整数语句正确的是哪几项？<br>A. Math.max(arr)<br>B. Math.max(arr[0], arr[1], arr[2], arr[3])<br>C. Math.max.call(Math, arr[0], arr[1], arr[2], arr[3])<br>D. Math.max.apply(Math,arr)</p>
+<p><strong>解析</strong>:max不能传入数组<br>正确答案：BCD</p>
+<p>10.修改以下哪些CSS属性会导致回流（reflow）？</p>
+<p>A. color<br>B. width<br>C. display<br>D. font-size</p>
+<p>正确答案：BCD</p>
+<p><strong>解析</strong>：<br>在讨论回流与重绘之前，我们要知道：</p>
+<p>1.浏览器使用流式布局模型 (Flow Based Layout)。<br>2.浏览器会把HTML解析成DOM，把CSS解析成CSSOM，DOM和CSSOM合并就产生了Render Tree。<br>3.有了RenderTree，我们就知道了所有节点的样式，然后计算他们在页面上的大小和位置，最后把节点绘制到页面上。<br>4.由于浏览器使用流式布局，对Render Tree的计算通常只需要遍历一次就可以完成，但table及其内部元素除外，他们可能需要多次计算，通常要花3倍于同等元素的时间，这也是为什么要避免使用table布局的原因之一。<br>一句话：回流必将引起重绘，重绘不一定会引起回流。</p>
+<p>回流 (Reflow)<br>当Render Tree中部分或全部元素的尺寸、结构、或某些属性发生改变时，浏览器重新渲染部分或全部文档的过程称为回流。</p>
+<p>会导致回流的操作：</p>
+<p>页面首次渲染<br>浏览器窗口大小发生改变<br>元素尺寸或位置发生改变<br>元素内容变化（文字数量或图片大小等等）<br>元素字体大小变化<br>添加或者删除可见的DOM元素<br>激活CSS伪类（例如：:hover）<br>查询某些属性或调用某些方法</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/22/html-css-js%E9%94%99%E9%A2%98%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/createElement%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-10-21T12:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/21/createElement%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">createElement用法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/createElement%E7%94%A8%E6%B3%95/">createElement用法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -233,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
