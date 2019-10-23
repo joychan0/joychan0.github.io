@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>prim算法和kruskal算法 | welcome</title>
+  <title>词法作用域 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="prim算法和kruskal算法最小生成树问题顾名思义，概括来说就是路修的最短。">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="词法作用域简单地说，词法作用域就是定义在词法阶段的作用域。换句话说，词法作用域是由你在写代码时将变量和块作用域写在哪里来决定的，因此当词法分析器处理代码时会保持作用域不变（大部分情况下是这样的）。作用域气泡的结构和互相之间的位置关系给引擎提供了足够的位置信息，引擎用这些信息 来查找标识符的位置。作用域查找会在找到第一个匹配的标识符时停止。在多层的嵌套作用域中可以定义同名的 标识符，这叫作“遮蔽效应">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="prim算法和kruskal算法">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;22&#x2F;prim%E7%AE%97%E6%B3%95%E5%92%8Ckruskal%E7%AE%97%E6%B3%95&#x2F;index.html">
+<meta property="og:title" content="词法作用域">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
-<meta property="og:description" content="prim算法和kruskal算法最小生成树问题顾名思义，概括来说就是路修的最短。">
+<meta property="og:description" content="词法作用域简单地说，词法作用域就是定义在词法阶段的作用域。换句话说，词法作用域是由你在写代码时将变量和块作用域写在哪里来决定的，因此当词法分析器处理代码时会保持作用域不变（大部分情况下是这样的）。作用域气泡的结构和互相之间的位置关系给引擎提供了足够的位置信息，引擎用这些信息 来查找标识符的位置。作用域查找会在找到第一个匹配的标识符时停止。在多层的嵌套作用域中可以定义同名的 标识符，这叫作“遮蔽效应">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-22T13:42:52.942Z">
+<meta property="og:updated_time" content="2019-10-23T13:39:56.991Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -145,31 +145,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-prim算法和kruskal算法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-词法作用域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      prim算法和kruskal算法
+      词法作用域
     </h1>
   
 
         
-        <a href="/2019/10/22/prim%E7%AE%97%E6%B3%95%E5%92%8Ckruskal%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-10-22T13:32:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
+        <a href="/2019/10/23/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="archive-article-date">
+  	<time datetime="2019-10-23T11:40:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="prim算法和kruskal算法"><a href="#prim算法和kruskal算法" class="headerlink" title="prim算法和kruskal算法"></a>prim算法和kruskal算法</h1><p>最小生成树问题顾名思义，概括来说就是路修的最短。</p>
+        <h1 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h1><p>简单地说，词法作用域就是定义在词法阶段的作用域。换句话说，词法作用域是由你在写代码时将变量和块作用域写在哪里来决定的，因此当词法分析器处理代码时会保持作用域不变（大部分情况下是这样的）。<br>作用域气泡的结构和互相之间的位置关系给引擎提供了足够的位置信息，引擎用这些信息 来查找标识符的位置。<br>作用域查找会在找到第一个匹配的标识符时停止。在多层的嵌套作用域中可以定义同名的 标识符，这叫作“遮蔽效应”（内部的标识符“遮蔽”了外部的标识符）。抛开遮蔽效应， 作用域查找始终从运行时所处的最内部作用域开始，逐级向外或者说向上进行，直到遇见第一个匹配的标识符为止。<br>全局变量会自动成为全局对象（比如浏览器中的 window 对象）的属性，因此 可以不直接通过全局对象的词法名称，而是间接地通过对全局对象属性的引 用来对其进行访问。window.a通过这种技术可以访问那些被同名变量所遮蔽的全局变量。但非全局的变量 如果被遮蔽了，无论如何都无法被访问到。</p>
 <a id="more"></a>
-<h3 id="prim算法"><a href="#prim算法" class="headerlink" title="prim算法"></a>prim算法</h3><p>设图G顶点集合为U，首先任意选择图G中的一点作为起始点a，将该点加入集合V，再从集合U-V中找到另一点b使得点b到V中任意一点的权值最小，此时将b点也加入集合V；<br>以此类推，现在的集合V={a，b}，再从集合U-V中找到另一点c使得点c到V中任意一点的权值最小，此时将c点加入集合V，直至所有顶点全部被加入V，此时就构建出了一颗MST。<br>因为有N个顶点，所以该MST就有N-1条边，每一次向集合V中加入一个点，就意味着找到一条MST的边。</p>
-<h5 id="简而言之，就是在所有加入集合的点与为加入集合的点连接的边中选择权值最小的那条，将与那条边相连的未在集合中的点加入集合"><a href="#简而言之，就是在所有加入集合的点与为加入集合的点连接的边中选择权值最小的那条，将与那条边相连的未在集合中的点加入集合" class="headerlink" title="简而言之，就是在所有加入集合的点与为加入集合的点连接的边中选择权值最小的那条，将与那条边相连的未在集合中的点加入集合"></a>简而言之，就是在所有加入集合的点与为加入集合的点连接的边中选择权值最小的那条，将与那条边相连的未在集合中的点加入集合</h5><h3 id="kruskal算法"><a href="#kruskal算法" class="headerlink" title="kruskal算法"></a>kruskal算法</h3><p>克鲁斯卡尔算法的基本思想是以边为主导地位，始终选择当前可用的最小边权的边（可以直接快排或者algorithm的sort）。<br>每次选择边权最小的边链接两个端点是kruskal的规则，并实时判断两个点之间有没有间接联通。</p>
-<h5 id="简而言之，选取权值最小的边，判断是否构成环，最后边的个数为n-1停止"><a href="#简而言之，选取权值最小的边，判断是否构成环，最后边的个数为n-1停止" class="headerlink" title="简而言之，选取权值最小的边，判断是否构成环，最后边的个数为n-1停止"></a>简而言之，选取权值最小的边，判断是否构成环，最后边的个数为n-1停止</h5><h3 id="prim算法适合稠密图，kruskal算法适合简单图。"><a href="#prim算法适合稠密图，kruskal算法适合简单图。" class="headerlink" title="prim算法适合稠密图，kruskal算法适合简单图。"></a>prim算法适合稠密图，kruskal算法适合简单图。</h3>
+<p><strong>无论函数在哪里被调用，也无论它如何被调用，它的词法作用域都只由函数被声明时所处的位置决定。</strong></p>
+<h2 id="欺骗语法"><a href="#欺骗语法" class="headerlink" title="欺骗语法"></a>欺骗语法</h2><p>JavaScript有两种机制来实现”欺骗“（也可以说修改）词法作用域</p>
+<h5 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h5><p>JavaScript 中的 eval(..) 函数可以接受一个字符串为参数，并将其中的内容视为好像在书写时就存在于程序中这个位置的代码。换句话说，可以在你写的代码中用程序生成代码并运行，就好像代码是写在那个位置的一样。<br>在执行 eval(..) 之后的代码时，引擎并不“知道”或“在意”前面的代码是以动态形式插 入进来，并对词法作用域的环境进行修改的。引擎只会如往常地进行词法作用域查找。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function foo(str,a)&#123;</span><br><span class="line">	eval(str);</span><br><span class="line">	console.log(a,b);</span><br><span class="line">&#125;</span><br><span class="line">var b=2;</span><br><span class="line">foo(&quot;var b=3;&quot;,1); //1,3</span><br></pre></td></tr></table></figure>
+<p>eval(..) 调用中的 “var b = 3;” 这段代码会被当作本来就在那里一样来处理。由于那段代码声明了一个新的变量 b，因此它对已经存在的 foo(..) 的词法作用域进行了修改。事实上，和前面提到的原理一样，这段代码实际上在 foo(..) 内部创建了一个变量 b，并遮蔽了外部（全局）作用域中的同名变量。<br>当 console.log(..) 被执行时，会在 foo(..) 的内部同时找到 a 和 b，但是永远也无法找到 外部的 b。因此会输出“1, 3”而不是正常情况下会输出的“1, 2”。<br><strong>在严格模式的程序中，eval(..) 在运行时有其自己的词法作用域，意味着其 中的声明无法修改所在的作用域。</strong></p>
+<h5 id="with"><a href="#with" class="headerlink" title="with"></a>with</h5><p>先看一段代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function foo(obj)&#123;</span><br><span class="line">	with(obj)&#123;</span><br><span class="line">		a=2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var o1=&#123;</span><br><span class="line">	a:3</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var o2=&#123;</span><br><span class="line">	b:3</span><br><span class="line">&#125;;</span><br><span class="line">foo(o1);</span><br><span class="line">console.log(o1.a);//2</span><br><span class="line">foo(o2);</span><br><span class="line">console.log(o2.a);//undefined</span><br><span class="line">console.log(a); 2   a被泄露到全局作用域上了</span><br></pre></td></tr></table></figure>
+<p>这个例子中创建了 o1 和 o2 两个对象。其中一个具有 a 属性，另外一个没有。foo(..) 函 数接受一个 obj 参数，该参数是一个对象引用，并对这个对象引用执行了 with(obj) {..}。 在 with 块内部，我们写的代码看起来只是对变量 a 进行简单的词法引用，实际上就是一个 LHS 引用，并将 2 赋值给它<br>当我们将 o1 传递进去，a＝2 赋值操作找到了 o1.a 并将 2 赋值给它，这在后面的 console. log(o1.a) 中可以体现。而当 o2 传递进去，o2 并没有 a 属性，因此不会创建这个属性， o2.a 保持 undefined。</p>
+<p><strong>with 可以将一个没有或有多个属性的对象处理为一个完全隔离的词法作用域，因此这个对象的属性也会被处理为定义在这个作用域中的词法标识符。</strong><br>在这个词法作用域没有找到a，因为是LHS查找，会去上层作用域寻找a，没有找到会声明一个a。</p>
+<p><strong>如果代码中大量使用 eval(..) 或 with，那么运行起来一定会变得非常慢。无论引擎多聪 明，试图将这些悲观情况的副作用限制在最小范围内，也无法避免如果没有这些优化，代 码会运行得更慢这个事实。</strong><br>就是避免eval和with的使用，会变慢。</p>
+
       
 
       
@@ -182,7 +190,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -238,7 +246,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/22/prim%E7%AE%97%E6%B3%95%E5%92%8Ckruskal%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/23/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -252,18 +260,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/23/JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JavaScript作用域是什么
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/22/html-css-js%E9%94%99%E9%A2%98%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">html css js错题总结</div>
+    <a href="/2019/10/23/JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript作用域是什么</div>
       <i class="icon-circle-right"></i>
     </a>
   
