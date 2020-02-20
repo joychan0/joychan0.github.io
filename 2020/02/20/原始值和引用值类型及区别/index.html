@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>判断this | welcome</title>
+  <title>原始值和引用值类型及区别 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="现在我们可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的 顺序来进行判断：">
+  <meta name="description" content="JavaScript中共有七种内置类型 · 空值（null）· 未定义（undefined）· 布尔值（boolean）· 数字（number）· 字符串（string）· 对象（object）· 符号（symbol ES6中新增） 除对象外，其他统称为“基本类型”">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="判断this">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;09&#x2F;%E5%88%A4%E6%96%ADthis&#x2F;index.html">
+<meta property="og:title" content="原始值和引用值类型及区别">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;%E5%8E%9F%E5%A7%8B%E5%80%BC%E5%92%8C%E5%BC%95%E7%94%A8%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%8C%BA%E5%88%AB&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
-<meta property="og:description" content="现在我们可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的 顺序来进行判断：">
+<meta property="og:description" content="JavaScript中共有七种内置类型 · 空值（null）· 未定义（undefined）· 布尔值（boolean）· 数字（number）· 字符串（string）· 对象（object）· 符号（symbol ES6中新增） 除对象外，其他统称为“基本类型”">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-09T06:47:43.451Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;2_20_1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;2_20_2.png">
+<meta property="og:updated_time" content="2020-02-20T07:07:51.832Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;2_20_1.png">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
   
@@ -149,33 +152,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-判断this" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-原始值和引用值类型及区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      判断this
+      原始值和引用值类型及区别
     </h1>
   
 
         
-        <a href="/2020/01/09/%E5%88%A4%E6%96%ADthis/" class="archive-article-date">
-  	<time datetime="2020-01-09T06:46:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-09</time>
+        <a href="/2020/02/20/%E5%8E%9F%E5%A7%8B%E5%80%BC%E5%92%8C%E5%BC%95%E7%94%A8%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2020-02-20T05:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>现在我们可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的 顺序来进行判断：<a id="more"></a></p>
-<ol>
-<li>函数是否在 new 中调用（new 绑定）？如果是的话 this 绑定的是新创建的对象。 var bar = new foo()</li>
-<li>函数是否通过 call、apply（显式绑定）或者硬绑定调用？如果是的话，this 绑定的是 指定的对象。 var bar = foo.call(obj2)</li>
-<li>函数是否在某个上下文对象中调用（隐式绑定）？如果是的话，this 绑定的是那个上 下文对象。 var bar = obj1.foo()</li>
-<li>如果都不是的话，使用默认绑定。如果在严格模式下，就绑定到 undefined，否则绑定到 全局对象。 var bar = foo()<br>就是这样。对于正常的函数调用来说，理解了这些知识你就可以明白 this 的绑定原理了。 不过……凡事总有例外</li>
-</ol>
+        <p>JavaScript中共有七种内置类型</p>
+<p>· 空值（null）<br>· 未定义（undefined）<br>· 布尔值（boolean）<br>· 数字（number）<br>· 字符串（string）<br>· 对象（object）<br>· 符号（symbol ES6中新增）</p>
+<p>除对象外，其他统称为“基本类型”</p>
+<a id="more"></a>
+<p>null、undefined、boolean、number、string这五种基本类型是可以按值访问的<br>因为可以操作保存在变量里的值。</p>
+<p>引用类型的值是保存在内存里的<strong>对象</strong><br>看一下下面这个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a=2;</span><br><span class="line">var b=a;</span><br><span class="line">b++;</span><br><span class="line">a;//2</span><br><span class="line">b;//3</span><br><span class="line"></span><br><span class="line">var c=[1,2,3];</span><br><span class="line">var d=c;</span><br><span class="line">d.push(4);</span><br><span class="line">c;//[1,2,3,4]</span><br><span class="line">d;//[1,2,3,4]</span><br></pre></td></tr></table></figure>
+<p>b持有的是a的副本 引用的是另一个number 2 ，而c和d指向的是同一个数组内存，是一个复合值的两个不同引用。<br>简单值（基本类型值或原始类型值）总是通过值赋值的方式来赋值/传递，包括null、undefined、字符串、数字、布尔、和ES6中的symbol<br>复合值–对象（包括数组和封装对象）和函数，则总是通过引用复制的方式来赋值/传递，包括null、undefined、字符串、数字、布尔、和ES6中的symbol</p>
+<p>定义基本类型值和引用类型值的方法是类似的：创建一个变量并为该变量赋值。<br>当值保存到变量中去了后，对不同类型值可以执行的操作则大相径庭。对于引用类型的值，我们可以为其添加属性和方法，也可以改变和删除其属性和方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var person =new Object();</span><br><span class="line">person,name =&quot;Nicholas&quot;; </span><br><span class="line">alert(person.name);//&quot;Nicholas&quot;</span><br></pre></td></tr></table></figure>
+<p>person在这里面就是个引用值 他是new Object()的一个引用 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;Nicholas&quot;;</span><br><span class="line">name.age=27;</span><br><span class="line">alert(name.age);//undefined</span><br></pre></td></tr></table></figure>
+<p>这里的name是一个string的基本类型值，不是个对象，所以不能添加属性。<br>所有的基本类型值都不能添加属性。能添加属性的只有object。</p>
+<p><img src="/img/2_20_1.png" alt="基本值"><br><img src="/img/2_20_2.png" alt="引用值"></p>
 
       
 
@@ -245,7 +255,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/09/%E5%88%A4%E6%96%ADthis/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/20/%E5%8E%9F%E5%A7%8B%E5%80%BC%E5%92%8C%E5%BC%95%E7%94%A8%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,18 +269,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/19/html5%E4%B8%AD%E6%96%B0%E5%A2%9E%E7%9A%84%E7%BB%93%E6%9E%84%E5%85%83%E7%B4%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/20/%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          html5中新增的元素
+          判断数据类型
         
       </div>
     </a>
   
   
-    <a href="/2020/01/07/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%97%AD%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">作用域闭包</div>
+    <a href="/2020/02/19/html5%E4%B8%AD%E6%96%B0%E5%A2%9E%E7%9A%84%E7%BB%93%E6%9E%84%E5%85%83%E7%B4%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">html5中新增的元素</div>
       <i class="icon-circle-right"></i>
     </a>
   
