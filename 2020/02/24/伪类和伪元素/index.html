@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 前交叉韧带 | welcome</title>
+  <title>伪类和伪元素 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="welcome">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E5%89%8D%E4%BA%A4%E5%8F%89%E9%9F%A7%E5%B8%A6&#x2F;index.html">
+  <meta name="description" content="为什么要引入伪类与伪元素？css引入伪类和伪元素概念是为了格式化文档树以外的信息。也就是说，伪类和伪元素是用来修饰不在文档树中的部分，比如，一句话中的第一个字母，或是列表中的第一个元素，又或者是鼠标悬停在某个超链接上时要设置的样式。 什么是伪类，伪元素？伪类：用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。比如说，当用户悬停在指定的元素时，我们可以通过:ho">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="伪类和伪元素">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;24&#x2F;%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
+<meta property="og:description" content="为什么要引入伪类与伪元素？css引入伪类和伪元素概念是为了格式化文档树以外的信息。也就是说，伪类和伪元素是用来修饰不在文档树中的部分，比如，一句话中的第一个字母，或是列表中的第一个元素，又或者是鼠标悬停在某个超链接上时要设置的样式。 什么是伪类，伪元素？伪类：用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。比如说，当用户悬停在指定的元素时，我们可以通过:ho">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-24T06:57:07.622Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -145,98 +149,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-伪类和伪元素" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/27/%E6%97%A5%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2019-11-27T10:53:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/27/%E6%97%A5%E8%AE%B0/">日记</a>
+    <h1 class="article-title" itemprop="name">
+      伪类和伪元素
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/24/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/" class="archive-article-date">
+  	<time datetime="2020-02-24T05:47:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>为什么要引入伪类与伪元素？</strong><br>css引入伪类和伪元素概念是为了格式化文档树以外的信息。也就是说，伪类和伪元素是用来修饰不在文档树中的部分，比如，一句话中的第一个字母，或是列表中的第一个元素，又或者是鼠标悬停在某个超链接上时要设置的样式。</p>
+<p><strong>什么是伪类，伪元素？</strong><br>伪类：用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。比如说，当用户悬停在指定的元素时，我们可以通过:hover来描述这个元素的状态。虽然它和普通的css类相似，可以为已有的元素添加样式，但是它只有处于dom树无法描述的状态下才能为元素添加样式，所以将其称为伪类。<br>伪元素：用于创建一些不在文档树中的元素，并为其添加样式。实际上，伪元素就是选取某些元素前面或后面这种普通选择器无法完成的工作。控制的内容和元素是相同的，但它本身是基于元素的抽象，并不存在于文档结构中。比如说，我们可以通过:before来在一个元素前增加一些文本，并为这些文本添加样式。</p>
+<p><strong>伪类的分类：状态伪类和结构性伪类</strong><br>状态伪类：是基于元素当前状态进行选择的。在与用户的交互过程中元素的状态是动态变化的，因此该元素会根据其状态呈现不同的样式。当元素处于某状态时会呈现该样式，而进入另一状态后，该样式也会失去。<br>  常见的状态伪类主要包括：</p>
+<a id="more"></a>
+<p>1、  :link 应用于未被访问过的链接；<br>2、  :hover 应用于鼠标悬停到的元素；<br>3、  :active 应用于被激活的元素；<br>4、  :visited 应用于被访问过的链接，与:link互斥。<br>5、  :focus 应用于拥有键盘输入焦点的元素。</p>
+<p>结构性伪类：是css3新增选择器，利用dom树进行元素过滤，通过文档结构的互相关系来匹配元素，能够减少class和id属性的定义，使文档结构更简洁。<br>       常见的结构性伪类包括：</p>
+<p>1、  :first-child 选择某个元素的第一个子元素；<br>2、  :last-child 选择某个元素的最后一个子元素；<br>3、  :nth-child() 选择某个元素的一个或多个特定的子元素；<br>4、  :nth-last-child() 选择某个元素的一个或多个特定的子元素，从这个元素的最后一个子元素开始算；<br>5、  :nth-of-type() 选择指定的元素；<br>6、  :nth-last-of-type() 选择指定的元素，从元素的最后一个开始计算；<br>7、  :first-of-type 选择一个上级元素下的第一个同类子元素；<br>8、  :last-of-type 选择一个上级元素的最后一个同类子元素；<br>9、  :only-child 选择的元素是它的父元素的唯一一个子元素；<br>10、  :only-of-type 选择一个元素是它的上级元素的唯一一个相同类型的子元素；<br>11、  :empty 选择的元素里面没有任何内容。<br>12、  :checked匹配被选中的input元素，这个input元素包括radio和checkbox。<br>13、  :default匹配默认选中的元素，例如：提交按钮总是表单的默认按钮。<br>14、  :disabled匹配禁用的表单元素。<br>15、  :enabled匹配没有设置disabled属性的表单元素。<br>16、  :valid匹配条件验证正确的表单元素。</p>
+<p><strong>常见的伪元素选择器：</strong></p>
+<p>1、  ::first-letter 选择元素文本的第一个字（母）。<br>2、  ::first-line 选择元素文本的第一行。<br>3、  ::before 在元素内容的最前面添加新内容。<br>4、  ::after 在元素内容的最后面添加新内容。<br>5、  ::selection匹配用户被用户选中或者处于高亮状态的部分<br>6、  ::placeholder匹配占位符的文本，只有元素设置了placeholder属性时，该伪元素才能生效<br>注意：你会发现伪类元素使用了两个冒号 (::) 而不是一个冒号 (:)，这是 CSS3 规范中的一部分要求，目的是为了区分伪类和伪元素，大多数浏览器都支持这两种表示方式。单冒号(:)用于 CSS3 伪类，双冒号(::)用于 CSS3 伪元素。对于 CSS2 中已经有的伪元素，例如 :before，单冒号和双冒号的写法 ::before 作用是一样的。</p>
+<p>所以，如果你的网站只需要兼容 webkit、firefox、opera 等浏览器，建议对于伪元素采用双冒号的写法，如果不得不兼容 IE 浏览器，还是用 CSS2 的单冒号写法比较安全</p>
+<p><strong>伪元素的应用：</strong><br>清除浮动：如果父元素的所有子元素都是浮动的，父元素的高度则无法撑开。可以通过对父元素添加after伪类撑开父元素高度，因为after就是其最后一个子元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clear::after &#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>画分割线：画一条如下的分割线</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    * &#123;</span><br><span class="line">      padding: 0;</span><br><span class="line">      margin: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .spliter::before, .spliter::after &#123;</span><br><span class="line">      content: &apos;&apos;;</span><br><span class="line">      display: inline-block;</span><br><span class="line">      border-top: 1px solid black;</span><br><span class="line">      width: 200px;</span><br><span class="line">      margin: 5px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p class=&quot;spliter&quot;&gt;分割线&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>计数器：使用CSS实现计数器，用到的属性有<br>1、 counter-reset: 属性设置某个选择器出现次数的计数器的值。默认为 0。<br>2、 counter-increment: 属性设置某个选取器每次出现的计数器增量。默认增量是 1。<br>3、 content: 插入生成内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .chooses &#123;</span><br><span class="line">      counter-reset: letters;</span><br><span class="line">    &#125;</span><br><span class="line">    .chooses input:checked &#123;</span><br><span class="line">      counter-increment: letters;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    .choose span::after &#123;</span><br><span class="line">      content: counter(letters);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;chooses&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;a</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;b</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;c</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;d</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;e</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;f</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;g</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;h</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;i</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;j</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;p class=&quot;choose&quot;&gt;我选择了&lt;span&gt;&lt;/span&gt;个字母&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>原文链接<a href="https://blog.csdn.net/m0_37686205/article/details/88396191" target="_blank" rel="noopener">https://blog.csdn.net/m0_37686205/article/details/88396191</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前交叉韧带</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/24/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/30/%E8%81%8A%E8%81%8A%E6%9C%80%E8%BF%91/" class="archive-article-date">
-  	<time datetime="2019-10-30T06:10:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/23/CSS%E9%80%89%E6%8B%A9%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS选择器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/30/%E8%81%8A%E8%81%8A%E6%9C%80%E8%BF%91/">聊聊最近</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前交叉韧带</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -259,9 +330,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
