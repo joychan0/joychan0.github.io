@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>提升 | welcome</title>
+  <title>利用fiexd定位实现导航条 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="提升直觉上会认为 JavaScript 代码在执行时是由上到下一行一行执行的。但实际上这并不完全 正确，有一种特殊情况会导致这个假设是错误的。">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="利用CSS中的fixed定位实现bilibili导航条效果 效果：">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="提升">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;05&#x2F;%E6%8F%90%E5%8D%87&#x2F;index.html">
+<meta property="og:title" content="利用fiexd定位实现导航条">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;28&#x2F;%E5%88%A9%E7%94%A8fiexd%E5%AE%9A%E4%BD%8D%E5%AE%9E%E7%8E%B0%E5%AF%BC%E8%88%AA%E6%9D%A1&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
-<meta property="og:description" content="提升直觉上会认为 JavaScript 代码在执行时是由上到下一行一行执行的。但实际上这并不完全 正确，有一种特殊情况会导致这个假设是错误的。">
+<meta property="og:description" content="利用CSS中的fixed定位实现bilibili导航条效果 效果：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-06T06:19:24.365Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E5%AF%BC%E8%88%AA%E6%9D%A1%E6%95%88%E6%9E%9C.jpg">
+<meta property="og:updated_time" content="2020-02-28T08:01:01.150Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E5%AF%BC%E8%88%AA%E6%9D%A1%E6%95%88%E6%9E%9C.jpg">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
   
@@ -149,51 +151,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-提升" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-利用fiexd定位实现导航条" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      提升
+      利用fiexd定位实现导航条
     </h1>
   
 
         
-        <a href="/2020/01/05/%E6%8F%90%E5%8D%87/" class="archive-article-date">
-  	<time datetime="2020-01-05T11:12:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
+        <a href="/2020/02/28/%E5%88%A9%E7%94%A8fiexd%E5%AE%9A%E4%BD%8D%E5%AE%9E%E7%8E%B0%E5%AF%BC%E8%88%AA%E6%9D%A1/" class="archive-article-date">
+  	<time datetime="2020-02-28T07:58:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h1><p>直觉上会认为 JavaScript 代码在执行时是由上到下一行一行执行的。但实际上这并不完全 正确，有一种特殊情况会导致这个假设是错误的。</p>
+        <p>利用CSS中的fixed定位实现bilibili导航条效果</p>
+<p>效果：<br><img src="/img/%E5%AF%BC%E8%88%AA%E6%9D%A1%E6%95%88%E6%9E%9C.jpg" alt=""></p>
 <a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=2;</span><br><span class="line">var a;</span><br><span class="line">console.log(a);//输出 2</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);//输出 undefinded</span><br><span class="line">a=2;</span><br></pre></td></tr></table></figure>
-<p><strong>声明在编译阶段进行，而赋值在执行阶段</strong><br>所以第一段代码会变成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">a=2;</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
-<p>第二段代码会变成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">console.log(a);</span><br><span class="line">a=2;</span><br></pre></td></tr></table></figure>
-
-<p>由此得到 <strong>先声明，后赋值</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo();</span><br><span class="line"></span><br><span class="line">function foo()&#123;</span><br><span class="line">	console.log(a);</span><br><span class="line">	var a=2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>foo 函数的声明（这个例子还包括实际函数的隐含值）被提升了，因此第一行中的调用可 以正常执行。<br>另外值得注意的是，每个作用域都会进行提升操作。尽管前面大部分的代码片段已经简化 了（因为它们只包含全局作用域），而我们正在讨论的 foo(..) 函数自身也会在内部对 var a 进行提升（显然并不是提升到了整个程序的最上方）。因此这段代码实际上会被理解为下 面的形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">	var a;</span><br><span class="line">	console.log(a); //undefined</span><br><span class="line">	a=2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-
-<p><strong>函数声明会被提升，但是函数表达式却不会被提升。</strong></p>
-<p><strong>函数声明和变量声明都会被提升。但是一个值得注意的细节（这个细节可以出现在有多个 “重复”声明的代码中）是函数会首先被提升，然后才是变量。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">foo(); // 1 </span><br><span class="line"></span><br><span class="line">var foo; </span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">	console.log( 1 );</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">foo = function() &#123;</span><br><span class="line">	console.log( 2 );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>引擎理解为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;     console.log( 1 ); &#125; </span><br><span class="line"></span><br><span class="line">foo(); // 1 </span><br><span class="line"></span><br><span class="line">foo = function() &#123;     console.log( 2 ); &#125;;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>尽管重复的 var 声明会被忽略掉，但出现在后面的函数声明还是可以覆盖前面的</strong></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;浮动和定位&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 1200px;</span><br><span class="line">				height: 1600px;</span><br><span class="line">				background-image: linear-gradient( white, blue);</span><br><span class="line">				margin: auto;</span><br><span class="line">			&#125;</span><br><span class="line">			.nav&#123;</span><br><span class="line">				width: 50px;</span><br><span class="line">				height: 500px;</span><br><span class="line">				background: #E0FFFF;</span><br><span class="line">				top: 100px;</span><br><span class="line">				right: 15px;</span><br><span class="line">				position: fixed;</span><br><span class="line">				box-shadow: 5px 5px 5px #888888;</span><br><span class="line">				border-radius: 5px;</span><br><span class="line">			&#125;</span><br><span class="line">			.nav_content&#123;</span><br><span class="line">				width: 30px;</span><br><span class="line">				padding: 2px 10px 2px 10px;</span><br><span class="line">				margin: auto;</span><br><span class="line">				height: 20px;</span><br><span class="line">				font-size: 0.8em;</span><br><span class="line">			&#125;</span><br><span class="line">			.nav_content:hover&#123;</span><br><span class="line">				background: #87CEFA;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;nav&quot;&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;直播&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;动画&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;番剧&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;国创&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;音乐&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;舞蹈&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;游戏&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;科技&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;数码&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;生活&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;鬼畜&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;时尚&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;广告&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;娱乐&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;专栏&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;电影&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;TV剧&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;影视&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;nav_content&quot;&gt;纪录&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -206,7 +187,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -262,7 +243,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/05/%E6%8F%90%E5%8D%87/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/28/%E5%88%A9%E7%94%A8fiexd%E5%AE%9A%E4%BD%8D%E5%AE%9E%E7%8E%B0%E5%AF%BC%E8%88%AA%E6%9D%A1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +257,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/06/%E6%9C%80%E8%BF%91%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          最近的学习计划
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/04/%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">函数作用域和块作用域</div>
+    <a href="/2020/02/28/CSS%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS定位方式和区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
