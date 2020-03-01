@@ -16,11 +16,11 @@
 <meta property="og:site_name" content="welcome">
 <meta property="og:description" content="在介绍定位之前，我们有必要了解一下文档流1、文档流与脱离文档流文档流是相对于盒子模型来讲解的，正常的文档流就是标签所处的一个空间，脱离文档流就是标签所处的另一个空间（正常空间之上的空间），一般来说，所有的页面操作都是基于这两个空间上完成的。并且脱离文档流空间的元素位置是不固定的，也没有块级和行级属性。 举个例子：当元素浮动时，会使其跳出文档流，也就是说后面的元素会无视先前它所占有的位置，直接在它的">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;2.jpg">
-<meta property="og:updated_time" content="2020-02-28T06:53:54.791Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E6%B5%AE%E5%8A%A8%E4%B8%80.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E6%B5%AE%E5%8A%A8%E4%BA%8C.jpg">
+<meta property="og:updated_time" content="2020-03-01T06:40:57.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E6%B5%AE%E5%8A%A8%E4%B8%80.jpg">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
   
@@ -178,9 +178,10 @@
 <p><strong>相对定位(Relative)</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;浮动和定位&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 600px;</span><br><span class="line">				height: 1600px;</span><br><span class="line">				background: brown;</span><br><span class="line">			&#125;</span><br><span class="line">			.one&#123;</span><br><span class="line">				width: 100px;</span><br><span class="line">				height: 100px;</span><br><span class="line">				background: gold;</span><br><span class="line">				top: 200px;</span><br><span class="line">				left: 100px;</span><br><span class="line">				position: relative;</span><br><span class="line">			&#125;</span><br><span class="line">			.two&#123;</span><br><span class="line">				width: 150px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				background: gray;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;two&quot;&gt;&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/1.jpg" alt=""><br><img src="/img/2.jpg" alt=""></p>
+<p><img src="/img/%E6%B5%AE%E5%8A%A8%E4%B8%80.jpg" alt=""><br><img src="/img/%E6%B5%AE%E5%8A%A8%E4%BA%8C.jpg" alt=""></p>
 <p>从上面两图可以看出 使用relative定位的元素，其原来的位置仍在正常的文档流中不会被其他元素所占据。<br>top left 等是相当于原来的位置进行定位的</p>
 <p>而absolute定位与relative不同的就是<br>1.其原来的位置不会出现现在文档流中，可以被其他元素占据<br>2.其位置相当于其父元素（第一个部位static的父元素）进行定位</p>
+<p>fixed是脱离文档流相对于浏览器窗口进行定位的，不会跟随滚轮一起移动。</p>
 
       
 
@@ -405,19 +406,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
