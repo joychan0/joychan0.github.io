@@ -147,6 +147,239 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Flex布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/Flex%E5%B8%83%E5%B1%80/">Flex布局</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/01/Flex%E5%B8%83%E5%B1%80/" class="archive-article-date">
+  	<time datetime="2020-03-01T08:11:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这个直接看阮一峰老师的博客<br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/Flex%E5%B8%83%E5%B1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-未知高宽元素水平垂直居中实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E9%AB%98%E5%AE%BD%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">未知高宽元素水平垂直居中实现</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E9%AB%98%E5%AE%BD%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2020-03-01T07:51:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.定位和transform</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				position: relative;</span><br><span class="line">			&#125;</span><br><span class="line">			.flag&#123;</span><br><span class="line">				background: red;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 5px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				top: 50%;</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				position: absolute;</span><br><span class="line">				left: 50%;</span><br><span class="line">				top: 50%;</span><br><span class="line">				-webkit-transform: translate(-50%,-50%);</span><br><span class="line">				background: bisque;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;flag&quot;&gt;</span><br><span class="line">				</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">				</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.使用flex弹性布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				position: relative;</span><br><span class="line">				display: flex;</span><br><span class="line">				justify-content: center;</span><br><span class="line">				align-items: center;</span><br><span class="line">			&#125;</span><br><span class="line">			.flag&#123;</span><br><span class="line">				background: red;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 5px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				top: 50%;</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				position: absolute;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;flag&quot;&gt;</span><br><span class="line">				</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">				aaa</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E9%AB%98%E5%AE%BD%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-未知宽高元素水平垂直居中实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">已知宽高元素水平垂直居中实现</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2020-03-01T06:43:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在解决未知宽高元素水平或垂直居中之前，先来看一下已知宽高的水平垂直居中</p>
+<p>1.使用自适应边界（auto margin）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				margin: auto;</span><br><span class="line">				background: bisque;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.负边界解决方案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				position: relative;</span><br><span class="line">			&#125;</span><br><span class="line">			.flag&#123;</span><br><span class="line">				background: red;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 5px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				top: 50%;</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				left: 50%;</span><br><span class="line">				top: 50%;</span><br><span class="line">				margin: -100px 0px 0px -100px;</span><br><span class="line">				background: bisque;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;flag&quot;&gt;</span><br><span class="line">				</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/0301_1.jpg" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-利用fiexd定位实现导航条" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -676,233 +909,6 @@
 
 
   
-    <article id="post-new的原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/">new的原理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-02-23T02:54:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JavaScript 也有一个 new 操作符，使用方法看起来也和那些面向类的语言一样，绝大多数开 发者都认为 JavaScript 中 new 的机制也和那些语言一样。然而，JavaScript 中 new 的机制实 际上和面向类的语言完全不同。<br>首先我们重新定义一下 JavaScript 中的“构造函数” 。在 JavaScript 中，构造函数只是一些 使用 new 操作符时被调用的函数。它们并不会属于某个类，也不会实例化一个类。实际上， 它们甚至都不能说是一种特殊的函数类型，它们只是被 new 操作符调用的普通函数而已。<br>所以，包括内置对象函数（比如 Number(..)，详情请查看第 3 章）在内的所有函数都可 以用 new 来调用，这种函数调用被称为构造函数调用。这里有一个重要但是非常细微的区 别：实际上并不存在所谓的“构造函数”，只有对于函数的“构造调用”。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bind、call、apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/">bind、call、apply</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/" class="archive-article-date">
-  	<time datetime="2020-02-22T05:01:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>bind()、call()、apply()都是用来改变this的指向。</p>
-<p>其中call()和apply()的不同只是参数书写方式不同。</p>
-<p><strong>一 、bind</strong><br>特点：</p>
-<p>1.返回原函数的拷贝，我们称这个拷贝的函数为绑定函数<br>2.将函数中的this固定为调用bind方法时的第一个参数，所以称之为绑定函数。注意是名词而非动词。<br>3.以后无论由哪个对象调用绑定函数，绑定函数中的this依然由当时调用的bind方法的一个参数决定，不会改变。<br>4.如果绑定函数作为构造函数来使用，那么已经固定了的this将不会生效，此时构造函数中的this依然为实例对象。<br>5.调用bind方法时的第二个参数做为绑定函数的第一个参数，称之为预设参数，调用绑定函数时的第一个参数则排在预设参数后面<br>6.无论使用任何对象调用bind方法时如果不传参数、第一个参数为undefined、第一个参数为null时，绑定函数中的this指向window对象</p>
-<p>作用：<br>1.拷贝一个目标函数<br>2.改变绑定函数运行时的this指针</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/21/%E6%95%B0%E7%BB%84/">数组</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/21/%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2020-02-21T03:09:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>和其他强类型语言不同，在 JavaScript 中，数组可以容纳任何类型的值，可以是字符串、 数字、对象（object），甚至是其他数组（多维数组就是通过这种方式来实现的）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a=[1,&quot;2&quot;,[3]];</span><br><span class="line"></span><br><span class="line">a.length; //3</span><br><span class="line">a[0]===1; //true</span><br><span class="line">a[2][0]===3; //true</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/21/%E6%95%B0%E7%BB%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1004,11 +1010,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -147,6 +147,233 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-new的原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/">new的原理</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-02-23T02:54:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JavaScript 也有一个 new 操作符，使用方法看起来也和那些面向类的语言一样，绝大多数开 发者都认为 JavaScript 中 new 的机制也和那些语言一样。然而，JavaScript 中 new 的机制实 际上和面向类的语言完全不同。<br>首先我们重新定义一下 JavaScript 中的“构造函数” 。在 JavaScript 中，构造函数只是一些 使用 new 操作符时被调用的函数。它们并不会属于某个类，也不会实例化一个类。实际上， 它们甚至都不能说是一种特殊的函数类型，它们只是被 new 操作符调用的普通函数而已。<br>所以，包括内置对象函数（比如 Number(..)，详情请查看第 3 章）在内的所有函数都可 以用 new 来调用，这种函数调用被称为构造函数调用。这里有一个重要但是非常细微的区 别：实际上并不存在所谓的“构造函数”，只有对于函数的“构造调用”。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-bind、call、apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/">bind、call、apply</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/" class="archive-article-date">
+  	<time datetime="2020-02-22T05:01:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>bind()、call()、apply()都是用来改变this的指向。</p>
+<p>其中call()和apply()的不同只是参数书写方式不同。</p>
+<p><strong>一 、bind</strong><br>特点：</p>
+<p>1.返回原函数的拷贝，我们称这个拷贝的函数为绑定函数<br>2.将函数中的this固定为调用bind方法时的第一个参数，所以称之为绑定函数。注意是名词而非动词。<br>3.以后无论由哪个对象调用绑定函数，绑定函数中的this依然由当时调用的bind方法的一个参数决定，不会改变。<br>4.如果绑定函数作为构造函数来使用，那么已经固定了的this将不会生效，此时构造函数中的this依然为实例对象。<br>5.调用bind方法时的第二个参数做为绑定函数的第一个参数，称之为预设参数，调用绑定函数时的第一个参数则排在预设参数后面<br>6.无论使用任何对象调用bind方法时如果不传参数、第一个参数为undefined、第一个参数为null时，绑定函数中的this指向window对象</p>
+<p>作用：<br>1.拷贝一个目标函数<br>2.改变绑定函数运行时的this指针</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/21/%E6%95%B0%E7%BB%84/">数组</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/21/%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2020-02-21T03:09:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>和其他强类型语言不同，在 JavaScript 中，数组可以容纳任何类型的值，可以是字符串、 数字、对象（object），甚至是其他数组（多维数组就是通过这种方式来实现的）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a=[1,&quot;2&quot;,[3]];</span><br><span class="line"></span><br><span class="line">a.length; //3</span><br><span class="line">a[0]===1; //true</span><br><span class="line">a[2][0]===3; //true</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/21/%E6%95%B0%E7%BB%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-类数组与数组的区别与转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -662,231 +889,6 @@
 
 
   
-    <article id="post-提升" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/05/%E6%8F%90%E5%8D%87/">提升</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/05/%E6%8F%90%E5%8D%87/" class="archive-article-date">
-  	<time datetime="2020-01-05T11:12:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h1><p>直觉上会认为 JavaScript 代码在执行时是由上到下一行一行执行的。但实际上这并不完全 正确，有一种特殊情况会导致这个假设是错误的。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/05/%E6%8F%90%E5%8D%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-函数作用域和块作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F/">函数作用域和块作用域</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/04/%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="archive-article-date">
-  	<time datetime="2020-01-04T12:42:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="函数作用域和块作用域"><a href="#函数作用域和块作用域" class="headerlink" title="函数作用域和块作用域"></a>函数作用域和块作用域</h1><p>对函数的传统认知就是先声明一个函数，然后再向里面添加代码。但反过来想也可以带来 一些启示：从所写的代码中挑选出一个任意的片段，然后用函数声明对它进行包装，实际 上就是把这些代码“隐藏”起来了。<br>实际的结果就是在这个代码片段的周围创建了一个作用域气泡，也就是说这段代码中的任 何声明（变量或函数）都将绑定在这个新创建的包装函数的作用域中，而不是先前所在的 作用域中。换句话说，可以把变量和函数包裹在一个函数的作用域中，然后用这个作用域 来“隐藏”它们。<br>有很多原因促成了这种基于作用域的隐藏方法。它们大都是从最小特权原则中引申出来 的，也叫最小授权或最小暴露原则。这个原则是指在软件设计中，应该最小限度地暴露必 要内容，而将其他内容都“隐藏”起来，比如某个模块或对象的 API 设计。<br>这个原则可以延伸到如何选择作用域来包含变量和函数。如果所有变量和函数都在全局作 用域中，当然可以在所有的内部嵌套作用域中访问到它们。但这样会破坏前面提到的最小 特权原则，因为可能会暴漏过多的变量或函数，而这些变量或函数本应该是私有的，正确 的代码应该是可以阻止对这些变量或函数进行访问的。</p>
-<h3 id="规避冲突"><a href="#规避冲突" class="headerlink" title="规避冲突"></a>规避冲突</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/04/%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/27/%E6%97%A5%E8%AE%B0/">日记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/27/%E6%97%A5%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2019-11-27T10:53:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>11.1号做的手术，今天已经是27号了，之前一直在医院住院。直到上个星期才出院。</p>
-<p>手术之后一直没有什么剧烈的痛感，只是右脚有点麻，有些部位没有知觉。<br>手术第二天开始做踝泵，上支具，第四天开始做直抬腿。第六天尝试拄拐下地，但是下地的时候血液会往伤口涌，整条伤腿会胀痛。第七天调的角度，第一次就调到了45°。<br>手术第八天膝盖开始明显肿胀，发烧，头晕。也不知道是弯腿多了还是下床早了。抽血化验的结果是提示可能有细菌感染或者败血症。<br>那几天绝对是手术之后最难受的几天。伤腿怎么放都不舒服，本来两个星期出院的，因为这一次突发状况延迟了一个星期出院。<br>三周过后膝盖的情况就明显好转了。除了右腿肌肉萎缩有点严重之外，没有什么其他的状况了。</p>
-<p>剩下这些时间就积极康复吧，慢慢恢复，一年之后再重拾篮球吧。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前交叉韧带</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/27/%E6%97%A5%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -988,11 +990,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
