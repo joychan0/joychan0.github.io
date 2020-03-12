@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Html | welcome</title>
+  <title>ES6基本语法 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="welcome">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;Html&#x2F;index.html">
+  <meta name="description" content="变量新的声明方法 let：ES6 新增了 let 命令，用于声明变量。其用法类似于 var，但是所声明的变量只在 let 命令所在的代码块内有效。const：const 声明一个只读的常量。 一旦声明，常量的值就不能改变。 1234567&amp;#123;	var a=1;	let b=2;&amp;#125;&#x2F;&#x2F;let所声明的变量只在命令所在的代码块内有效alert(a);&#x2F;&#x2F;1alert(b);&#x2F;&#x2F; Ref">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6基本语法">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;12&#x2F;ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
+<meta property="og:description" content="变量新的声明方法 let：ES6 新增了 let 命令，用于声明变量。其用法类似于 var，但是所声明的变量只在 let 命令所在的代码块内有效。const：const 声明一个只读的常量。 一旦声明，常量的值就不能改变。 1234567&amp;#123;	var a=1;	let b=2;&amp;#125;&#x2F;&#x2F;let所声明的变量只在命令所在的代码块内有效alert(a);&#x2F;&#x2F;1alert(b);&#x2F;&#x2F; Ref">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-12T06:22:12.984Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -145,60 +149,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ES6基本语法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/html5%E4%B8%AD%E6%96%B0%E5%A2%9E%E7%9A%84%E7%BB%93%E6%9E%84%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  	<time datetime="2020-02-19T06:41:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/html5%E4%B8%AD%E6%96%B0%E5%A2%9E%E7%9A%84%E7%BB%93%E6%9E%84%E5%85%83%E7%B4%A0/">html5中新增的元素</a>
+    <h1 class="article-title" itemprop="name">
+      ES6基本语法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-03-12T05:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>变量</strong><br>新的声明方法</p>
+<p>let：ES6 新增了 let 命令，用于声明变量。其用法类似于 var，但是所声明的变量只在 let 命令所在的代码块内有效。<br>const：const 声明一个只读的常量。 一旦声明，常量的值就不能改变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	var a=1;</span><br><span class="line">	let b=2;</span><br><span class="line">&#125;</span><br><span class="line">//let所声明的变量只在命令所在的代码块内有效</span><br><span class="line">alert(a);//1</span><br><span class="line">alert(b);// ReferenceError: a is not defined</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">var a=2;//正常，因为var 有变量提升，可以解析为 var a=1; a=2;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	let a=1;</span><br><span class="line">	let a=2; //报错 let不存在变量提升，不允许重复声明。另外变量不允许在声明前使用，var声明变量的可以在声明前使用，值为undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var tmp=123;</span><br><span class="line">if(true)&#123;</span><br><span class="line">	tmp=&apos;abc&apos;;//ReferenceError 只要块级作用域存在let命令，它所声明的变量就会绑定这个区域，不再受外部的影响</span><br><span class="line">	let tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>const命令<a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const PI=3.1415;</span><br><span class="line">alert(PI);//3.1415</span><br><span class="line">PI=3;// TypeError: Assignment to constant variable.  声明之后不能改变</span><br><span class="line">const a;//SyntaxError : Missing initializer in const declaration   声明时必须赋值</span><br></pre></td></tr></table></figure>
+<p>const 命令声明的常量也不会提升，同样存在暂时性死区，只能在声明后使用。使用 const 声明常量也与 let 一样，不可重复声明。</p>
+<p><strong>解构赋值</strong><br>1.两边结构必须一样<br>2.右边必须是个东西<br>3.解构和赋值必须同时进行</p>
+<p>数组的解构赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let [a,b,c]=[1,2,3];</span><br><span class="line">alert(a);//1</span><br><span class="line">alert(b);//2</span><br><span class="line">alert(c);//3</span><br><span class="line">let [head,...tail]=[1,2,3,4];</span><br><span class="line">console.log(head);//1</span><br><span class="line">console.log(tail); //[2,3,4]      ...表示数值展开</span><br></pre></td></tr></table></figure>
+<p>如果解构不成功 ，变量的值就会变成undefined</p>
+<p>对象的解构赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let &#123;foo,bar&#125;=&#123;foo:&quot;aaa&quot;,bar:&quot;bbb&quot;&#125;;</span><br><span class="line">alert(foo);//&quot;aaa&quot;</span><br><span class="line">alert(bar);//&quot;bbb&quot;</span><br></pre></td></tr></table></figure>
+<p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值是由它的 位置决定的：而对象的属性没有次序，变量必须与属性同名才能取到正确的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let &#123;bar,foo&#125;=&#123;foo:&quot;aaa&quot;,bar:&quot;bbb&quot;&#125;;</span><br><span class="line">alert(foo);//&quot;aaa&quot;</span><br><span class="line">alert(bar);//&quot;bbb&quot;</span><br><span class="line">let &#123; baz &#125; = &#123; foo:”aaa”, bar :”bbb”&#125;; </span><br><span class="line">alert(baz);//undefined</span><br></pre></td></tr></table></figure>
+<p>如果变量名与属性名不一致，必须写成下面这样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var &#123; foo : baz &#125; = &#123; foo : ’ aaa ’, bar :’bbb’ &#125; ; </span><br><span class="line">baz // ” aaa” </span><br><span class="line">let &#123; foo : foo , bar : bar &#125; = &#123; foo:”aaa”, bar :”bbb”&#125;; //实际上说明，对象的解构赋值是下面形式的简写</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Html</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/03/08/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery选择器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -221,9 +356,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
