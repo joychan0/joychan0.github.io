@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="welcome">
 <meta property="og:description" content="Math对象的扩展1.Math.trunc()Math.trunc方法用于去除一个数的小数部分，例如： 12345Math.trunc(4.1)  &#x2F;&#x2F;4Math.trunc(4.9)  &#x2F;&#x2F;9Math.trunc(-4.1) &#x2F;&#x2F;-4Math.trunc(-4.9) &#x2F;&#x2F;-4Math.trunc(-0.1234) &#x2F;&#x2F;-0 对于空值和无法截取整数的值，返回NaN 123Math.trunc(Na">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-01T03:01:46.758Z">
+<meta property="og:updated_time" content="2020-04-01T03:04:59.053Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -173,7 +173,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(4.1)  //4</span><br><span class="line">Math.trunc(4.9)  //9</span><br><span class="line">Math.trunc(-4.1) //-4</span><br><span class="line">Math.trunc(-4.9) //-4</span><br><span class="line">Math.trunc(-0.1234) //-0</span><br></pre></td></tr></table></figure>
 <p>对于空值和无法截取整数的值，返回NaN</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(NaN)  //NaN</span><br><span class="line">Math.trunc(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.trunc()    //NaN</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <h4 id="2-Math-sign"><a href="#2-Math-sign" class="headerlink" title="2.Math.sign()"></a>2.Math.sign()</h4><p>Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值。会先将其转成数值</p>
 <p>其返回值有 5 种情况。<br>参数为正数，返回＋l;<br>参数为负数，返回－1;<br>参数为 0，返回 0;<br>参数为－0，返回－0;<br>其他值，返回 NaN。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Math.sign(-5) // -1 </span><br><span class="line">Math.sign(5) // +l </span><br><span class="line">Math.sign(O) // +O </span><br><span class="line">Math.sign(-0) // -0 </span><br><span class="line">Math.sign(NaN) //NaN</span><br><span class="line">Math.sign(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.sign()    //NaN。</span><br></pre></td></tr></table></figure>

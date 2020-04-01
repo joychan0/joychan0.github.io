@@ -171,27 +171,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(4.1)  //4</span><br><span class="line">Math.trunc(4.9)  //9</span><br><span class="line">Math.trunc(-4.1) //-4</span><br><span class="line">Math.trunc(-4.9) //-4</span><br><span class="line">Math.trunc(-0.1234) //-0</span><br></pre></td></tr></table></figure>
 <p>对于空值和无法截取整数的值，返回NaN</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(NaN)  //NaN</span><br><span class="line">Math.trunc(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.trunc()    //NaN</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-Math-sign"><a href="#2-Math-sign" class="headerlink" title="2.Math.sign()"></a>2.Math.sign()</h4><p>Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值。会先将其转成数值</p>
-<p>其返回值有 5 种情况。<br>参数为正数，返回＋l;<br>参数为负数，返回－1;<br>参数为 0，返回 0;<br>参数为－0，返回－0;<br>其他值，返回 NaN。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Math.sign(-5) // -1 </span><br><span class="line">Math.sign(5) // +l </span><br><span class="line">Math.sign(O) // +O </span><br><span class="line">Math.sign(-0) // -0 </span><br><span class="line">Math.sign(NaN) //NaN</span><br><span class="line">Math.sign(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.sign()    //NaN。</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-Math-cbrt"><a href="#3-Math-cbrt" class="headerlink" title="3.Math.cbrt()"></a>3.Math.cbrt()</h4><p>Math.cbrt方法用于计算一个数的立方根</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Math.cbrt(1)  //1</span><br><span class="line">Math.cbrt(-1) //-1</span><br><span class="line">Math.cbrt(0)  //0</span><br><span class="line">Math.cbrt(2)  //1.2599210498.....</span><br></pre></td></tr></table></figure>
-<p>对于非数值，Math.cbrt也是先使用Number方法将其转为数值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.cbrt(&apos;8&apos;)  //2</span><br><span class="line">Math.cbrt(&apos;hello&apos;) //NaN</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-Math-clz32"><a href="#4-Math-clz32" class="headerlink" title="4.Math.clz32()"></a>4.Math.clz32()</h4><p>Math.clz32方法返回一个数的32位无符号整数形式有多少个前导0</p>
-<h4 id="5-Math-imul"><a href="#5-Math-imul" class="headerlink" title="5.Math.imul()"></a>5.Math.imul()</h4><p>Math.imul方法返回两个数以32位带符号整数形式相乘的结果，返回的也是一个32位的带符号整数</p>
-<h4 id="6-Math-fround"><a href="#6-Math-fround" class="headerlink" title="6.Math.fround()"></a>6.Math.fround()</h4><p>Math.fround方法返回一个数的单精度浮点数形式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.fround(0)  //0</span><br><span class="line">Math.fround(1)  //1</span><br><span class="line">Math.fround(1.337)  //1.3370000123</span><br><span class="line">Math.fround(1.5)  //1.5</span><br><span class="line">Math.fround(NaN)  //NaN</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-Math-hypot"><a href="#7-Math-hypot" class="headerlink" title="7.Math.hypot()"></a>7.Math.hypot()</h4><p>Math.hypot方法返回所有参数的平方和的平方根</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.hypot(3,4)  //5    3^2+4^2=5^2</span><br><span class="line">Math.hypot(3,4,5) //7.0710678....</span><br><span class="line">Math.hypot()     //0</span><br><span class="line">Math.hypot(NaN)  //NaN</span><br><span class="line">Math.hypot(3,4,&apos;foo&apos;) //NaN</span><br></pre></td></tr></table></figure>
-<h4 id="8-对数方法"><a href="#8-对数方法" class="headerlink" title="8.对数方法"></a>8.对数方法</h4><p>ES6新增4个对数相关方法<br>Math.expm1()<br>Math.log1p()<br>Math.log10()<br>Math.log2()</p>
-<h4 id="9-双曲函数方法"><a href="#9-双曲函数方法" class="headerlink" title="9.双曲函数方法"></a>9.双曲函数方法</h4><p>Math.sinh()<br>Math.cosh()<br>Math.tanh()<br>Math.asinh()<br>Math.acosh()<br>Math.atanh(x)</p>
-<h4 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符"></a>指数运算符</h4><p>2 * * 2   //4<br>2 * * 3  //8<br>a * * =2 等同于a= a*a</p>
-
+        
       
 
       
@@ -265,9 +245,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>总结几个最近面试遇见比较多和自己不会的题目</p>
-<p>#####1.http的相关内容 之前就没学过，面试全说不会</p>
-<p>#####2.闭包含义  优缺点</p>
-<p>闭包是指有权访问另一个函数作用域中的变量的函数<br>优点<br>1.可以读取函数内部的变量<br>2.可以让这些局部变量保存在内存中，实现变量数据共享。<br>缺点<br>1.由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2.闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+<h5 id="1-http的相关内容-之前就没学过，面试全说不会"><a href="#1-http的相关内容-之前就没学过，面试全说不会" class="headerlink" title="1.http的相关内容 之前就没学过，面试全说不会"></a>1.http的相关内容 之前就没学过，面试全说不会</h5><h5 id="2-闭包含义-优缺点"><a href="#2-闭包含义-优缺点" class="headerlink" title="2.闭包含义  优缺点"></a>2.闭包含义  优缺点</h5><p>闭包是指有权访问另一个函数作用域中的变量的函数<br>优点<br>1.可以读取函数内部的变量<br>2.可以让这些局部变量保存在内存中，实现变量数据共享。<br>缺点<br>1.由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2.闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
         
       
 
