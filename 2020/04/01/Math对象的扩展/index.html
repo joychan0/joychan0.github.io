@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>welcome</title>
+  <title>Math对象的扩展 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="welcome">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="Math对象的扩展1.Math.trunc()Math.trunc方法用于去除一个数的小数部分，例如： 12345Math.trunc(4.1)  &#x2F;&#x2F;4Math.trunc(4.9)  &#x2F;&#x2F;9Math.trunc(-4.1) &#x2F;&#x2F;-4Math.trunc(-4.9) &#x2F;&#x2F;-4Math.trunc(-0.1234) &#x2F;&#x2F;-0 对于空值和无法截取整数的值，返回NaN 123Math.trunc(Na">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Math对象的扩展">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;01&#x2F;Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
+<meta property="og:description" content="Math对象的扩展1.Math.trunc()Math.trunc方法用于去除一个数的小数部分，例如： 12345Math.trunc(4.1)  &#x2F;&#x2F;4Math.trunc(4.9)  &#x2F;&#x2F;9Math.trunc(-4.1) &#x2F;&#x2F;-4Math.trunc(-4.9) &#x2F;&#x2F;-4Math.trunc(-0.1234) &#x2F;&#x2F;-0 对于空值和无法截取整数的值，返回NaN 123Math.trunc(Na">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-01T03:01:46.758Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -145,36 +149,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-未知宽高元素水平垂直居中实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Math对象的扩展" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">已知宽高元素水平垂直居中实现</a>
+    <h1 class="article-title" itemprop="name">
+      Math对象的扩展
     </h1>
   
 
         
-        <a href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-03-01T06:43:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+        <a href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/" class="archive-article-date">
+  	<time datetime="2020-04-01T02:24:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在解决未知宽高元素水平或垂直居中之前，先来看一下已知宽高的水平垂直居中</p>
-<p>1.使用自适应边界（auto margin）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				margin: auto;</span><br><span class="line">				background: bisque;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        <h2 id="Math对象的扩展"><a href="#Math对象的扩展" class="headerlink" title="Math对象的扩展"></a>Math对象的扩展</h2><h4 id="1-Math-trunc"><a href="#1-Math-trunc" class="headerlink" title="1.Math.trunc()"></a>1.Math.trunc()</h4><p>Math.trunc方法用于去除一个数的小数部分，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(4.1)  //4</span><br><span class="line">Math.trunc(4.9)  //9</span><br><span class="line">Math.trunc(-4.1) //-4</span><br><span class="line">Math.trunc(-4.9) //-4</span><br><span class="line">Math.trunc(-0.1234) //-0</span><br></pre></td></tr></table></figure>
+<p>对于空值和无法截取整数的值，返回NaN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(NaN)  //NaN</span><br><span class="line">Math.trunc(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.trunc()    //NaN</span><br></pre></td></tr></table></figure>
 
-<p>2.负边界解决方案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				position: relative;</span><br><span class="line">			&#125;</span><br><span class="line">			.flag&#123;</span><br><span class="line">				background: red;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 5px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				top: 50%;</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				left: 50%;</span><br><span class="line">				top: 50%;</span><br><span class="line">				margin: -100px 0px 0px -100px;</span><br><span class="line">				background: bisque;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;flag&quot;&gt;</span><br><span class="line">				</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-Math-sign"><a href="#2-Math-sign" class="headerlink" title="2.Math.sign()"></a>2.Math.sign()</h4><p>Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值。会先将其转成数值</p>
+<p>其返回值有 5 种情况。<br>参数为正数，返回＋l;<br>参数为负数，返回－1;<br>参数为 0，返回 0;<br>参数为－0，返回－0;<br>其他值，返回 NaN。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Math.sign(-5) // -1 </span><br><span class="line">Math.sign(5) // +l </span><br><span class="line">Math.sign(O) // +O </span><br><span class="line">Math.sign(-0) // -0 </span><br><span class="line">Math.sign(NaN) //NaN</span><br><span class="line">Math.sign(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.sign()    //NaN。</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/0301_1.jpg" alt=""></p>
+<h4 id="3-Math-cbrt"><a href="#3-Math-cbrt" class="headerlink" title="3.Math.cbrt()"></a>3.Math.cbrt()</h4><p>Math.cbrt方法用于计算一个数的立方根</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Math.cbrt(1)  //1</span><br><span class="line">Math.cbrt(-1) //-1</span><br><span class="line">Math.cbrt(0)  //0</span><br><span class="line">Math.cbrt(2)  //1.2599210498.....</span><br></pre></td></tr></table></figure>
+<p>对于非数值，Math.cbrt也是先使用Number方法将其转为数值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.cbrt(&apos;8&apos;)  //2</span><br><span class="line">Math.cbrt(&apos;hello&apos;) //NaN</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Math-clz32"><a href="#4-Math-clz32" class="headerlink" title="4.Math.clz32()"></a>4.Math.clz32()</h4><p>Math.clz32方法返回一个数的32位无符号整数形式有多少个前导0</p>
+<h4 id="5-Math-imul"><a href="#5-Math-imul" class="headerlink" title="5.Math.imul()"></a>5.Math.imul()</h4><p>Math.imul方法返回两个数以32位带符号整数形式相乘的结果，返回的也是一个32位的带符号整数</p>
+<h4 id="6-Math-fround"><a href="#6-Math-fround" class="headerlink" title="6.Math.fround()"></a>6.Math.fround()</h4><p>Math.fround方法返回一个数的单精度浮点数形式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.fround(0)  //0</span><br><span class="line">Math.fround(1)  //1</span><br><span class="line">Math.fround(1.337)  //1.3370000123</span><br><span class="line">Math.fround(1.5)  //1.5</span><br><span class="line">Math.fround(NaN)  //NaN</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-Math-hypot"><a href="#7-Math-hypot" class="headerlink" title="7.Math.hypot()"></a>7.Math.hypot()</h4><p>Math.hypot方法返回所有参数的平方和的平方根</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.hypot(3,4)  //5    3^2+4^2=5^2</span><br><span class="line">Math.hypot(3,4,5) //7.0710678....</span><br><span class="line">Math.hypot()     //0</span><br><span class="line">Math.hypot(NaN)  //NaN</span><br><span class="line">Math.hypot(3,4,&apos;foo&apos;) //NaN</span><br></pre></td></tr></table></figure>
+<h4 id="8-对数方法"><a href="#8-对数方法" class="headerlink" title="8.对数方法"></a>8.对数方法</h4><p>ES6新增4个对数相关方法<br>Math.expm1()<br>Math.log1p()<br>Math.log10()<br>Math.log2()</p>
+<h4 id="9-双曲函数方法"><a href="#9-双曲函数方法" class="headerlink" title="9.双曲函数方法"></a>9.双曲函数方法</h4><p>Math.sinh()<br>Math.cosh()<br>Math.tanh()<br>Math.asinh()<br>Math.acosh()<br>Math.atanh(x)</p>
+<h4 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符"></a>指数运算符</h4><p>2 * * 2   //4<br>2 * * 3  //8<br>a * * =2 等同于a= a*a</p>
 
       
 
@@ -188,7 +206,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -197,16 +215,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/24/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最近面试题目总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -226,693 +303,14 @@
 
 
 
-
-  
-    <article id="post-利用fiexd定位实现导航条" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/28/%E5%88%A9%E7%94%A8fiexd%E5%AE%9A%E4%BD%8D%E5%AE%9E%E7%8E%B0%E5%AF%BC%E8%88%AA%E6%9D%A1/">利用fiexd定位实现导航条</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/28/%E5%88%A9%E7%94%A8fiexd%E5%AE%9A%E4%BD%8D%E5%AE%9E%E7%8E%B0%E5%AF%BC%E8%88%AA%E6%9D%A1/" class="archive-article-date">
-  	<time datetime="2020-02-28T07:58:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>利用CSS中的fixed定位实现bilibili导航条效果</p>
-<p>效果：<br><img src="/img/%E5%AF%BC%E8%88%AA%E6%9D%A1%E6%95%88%E6%9E%9C.jpg" alt=""></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/28/%E5%88%A9%E7%94%A8fiexd%E5%AE%9A%E4%BD%8D%E5%AE%9E%E7%8E%B0%E5%AF%BC%E8%88%AA%E6%9D%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS定位方式和区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/28/CSS%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/">CSS定位方式和区别</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/28/CSS%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2020-02-28T06:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>在介绍定位之前，我们有必要了解一下文档流</strong><br>1、文档流与脱离文档流<br>文档流是相对于盒子模型来讲解的，正常的文档流就是标签所处的一个空间，脱离文档流就是标签所处的另一个空间（正常空间之上的空间），一般来说，所有的页面操作都是基于这两个空间上完成的。并且脱离文档流空间的元素位置是不固定的，也没有块级和行级属性。 举个例子：当元素浮动时，会使其跳出文档流，也就是说后面的元素会无视先前它所占有的位置，直接在它的位置进行布局。</p>
-<p>2、元素的定位<br>1）Static（默认值）：<br>这个是元素的默认定位方式，会占据正常的空间，处于文档流之中，并且忽略“left”等属性是产生的任何效果。<br>2）Relative（相对定位）<br>相对定位的方式。相对于自身在文档流中所处的位置来进行定位，参照物为自身，仍处于文档流中，原先占有的空间仍保留（一般用作改变层级和作为绝对定位的参照物）<br>3）Absolute（绝对定位）<br>绝对定位是脱离文档流的，默认宽度为内容的宽度，在页面中是不占据空间的，后面的元素会在其原来的位置上进行布局，参照物为第一个定义的属性不是static的祖先或者父元素（如果没有父元素的话，那就应该以body为父元素），定位之后都会产生块级框。元素的位置通过“top”,”bottom”,”right”,”left”属性进行定位。<br>4）Fixed（固定布局）<br>固定布局是脱离文档流的，默认宽度为内容的宽度，参照物为浏览器窗口，其特性和absolute是相同的，当然，如果给头部定义了一个固定布局，头部则不会随着滚动条移动了（如百度的搜索框）。元素的位置通过“top”,”bottom”,”right”,”left”属性进行定位。<br>下面我们用实例来说明这些问题：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/28/CSS%E5%AE%9A%E4%BD%8D%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-帮你彻底搞懂JS中的prototype、——-proto-与constructor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/26/%E5%B8%AE%E4%BD%A0%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82JS%E4%B8%AD%E7%9A%84prototype%E3%80%81%E2%80%94%E2%80%94-proto-%E4%B8%8Econstructor/">帮你彻底搞懂JS中的prototype、——__proto__与constructor</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/26/%E5%B8%AE%E4%BD%A0%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82JS%E4%B8%AD%E7%9A%84prototype%E3%80%81%E2%80%94%E2%80%94-proto-%E4%B8%8Econstructor/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:15:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>链接：<a href="https://blog.csdn.net/cc18868876837/article/details/81211729" target="_blank" rel="noopener">https://blog.csdn.net/cc18868876837/article/details/81211729</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/26/%E5%B8%AE%E4%BD%A0%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82JS%E4%B8%AD%E7%9A%84prototype%E3%80%81%E2%80%94%E2%80%94-proto-%E4%B8%8Econstructor/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-对象属性类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/25/%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E7%B1%BB%E5%9E%8B/">对象属性类型</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/25/%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-02-25T06:25:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>数据属性</strong><br>1.【Configurable】:表示能否通过delete删除属性而重新定义属性,能否修改属性的特性,或者能否把属性修改为访问器属性。默认特性为true。<br>2.【Enumerable】:表示能否通过for-in循环访问属性,他们的默认属性值为true<br>3.【writable】:表示能否修改属性的值。默认为true。<br>4.【value】 :包含这个属性的数据值。默认值为undefined。</p>
-<p>要修改属性默认的特性，必须使用ECMAScript5的Object.defineProperty()方法。这个方法接受三个参数：属性所在的对象、属性的名字和一个描述符对象。其中，描述符（descriptor）对象的属性必须是：configurable、enumerable、writable和value。设置其中的一或多个值，可以修改对应的特性值。<br><strong>在调用Object.defineProperty()方法时，如果不指定，configurable、enumerable、writable特性的默认值都是false。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var person=&#123;&#125;;</span><br><span class="line">Object.defineProperty(person,&quot;name&quot;,&#123;</span><br><span class="line">	writable: false,</span><br><span class="line">	value: &quot;joychan&quot;</span><br><span class="line">&#125;);</span><br><span class="line">alert(person.name);//joychan</span><br><span class="line">person.name=Kobe;</span><br><span class="line">alert(person.name);//joychan</span><br></pre></td></tr></table></figure>
-<p>这个例子为person对象创建了一个name属性，值为joychan，它的值是只读的，不可修改的</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/25/%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E7%B1%BB%E5%9E%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-伪类和伪元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/24/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/">伪类和伪元素</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/24/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  	<time datetime="2020-02-24T05:47:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>为什么要引入伪类与伪元素？</strong><br>css引入伪类和伪元素概念是为了格式化文档树以外的信息。也就是说，伪类和伪元素是用来修饰不在文档树中的部分，比如，一句话中的第一个字母，或是列表中的第一个元素，又或者是鼠标悬停在某个超链接上时要设置的样式。</p>
-<p><strong>什么是伪类，伪元素？</strong><br>伪类：用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。比如说，当用户悬停在指定的元素时，我们可以通过:hover来描述这个元素的状态。虽然它和普通的css类相似，可以为已有的元素添加样式，但是它只有处于dom树无法描述的状态下才能为元素添加样式，所以将其称为伪类。<br>伪元素：用于创建一些不在文档树中的元素，并为其添加样式。实际上，伪元素就是选取某些元素前面或后面这种普通选择器无法完成的工作。控制的内容和元素是相同的，但它本身是基于元素的抽象，并不存在于文档结构中。比如说，我们可以通过:before来在一个元素前增加一些文本，并为这些文本添加样式。</p>
-<p><strong>伪类的分类：状态伪类和结构性伪类</strong><br>状态伪类：是基于元素当前状态进行选择的。在与用户的交互过程中元素的状态是动态变化的，因此该元素会根据其状态呈现不同的样式。当元素处于某状态时会呈现该样式，而进入另一状态后，该样式也会失去。<br>  常见的状态伪类主要包括：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/24/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/23/CSS%E9%80%89%E6%8B%A9%E5%99%A8/">CSS选择器</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/23/CSS%E9%80%89%E6%8B%A9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-02-23T07:24:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>每个规则都有两个基本部分：选择器(selector)和声明块(declaration block)。声明块由一个或多个声明组成，每个声明则是一个属性值对，每个样式表由系列规则组成</p>
-<p>规则的结构<br><img src="/img/2_23_1.jpg" alt="规则的结构"></p>
-<p><strong>声明和关键字</strong><br>一个声明块包含一个或多个声明，如果声明中使用了不正确的值或关键字，那么这个声明就会被忽略</p>
-<p>如果一个属性的值可以取多个关键字，那么这些关键字之间用空格分隔</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p&#123;font: medium Helvetica;&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/23/CSS%E9%80%89%E6%8B%A9%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS引入方式和优先级权重问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/23/CSS%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E4%BC%98%E5%85%88%E7%BA%A7%E6%9D%83%E9%87%8D%E9%97%AE%E9%A2%98/">CSS引入方式和优先级权重问题</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/23/CSS%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E4%BC%98%E5%85%88%E7%BA%A7%E6%9D%83%E9%87%8D%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-23T05:36:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CSS的引入样式总共有三种：行内样式（内联样式表）、内部样式表、外部样式表。下面分别来介绍这三种样式。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/23/CSS%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E4%BC%98%E5%85%88%E7%BA%A7%E6%9D%83%E9%87%8D%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-new的原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/">new的原理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-02-23T02:54:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JavaScript 也有一个 new 操作符，使用方法看起来也和那些面向类的语言一样，绝大多数开 发者都认为 JavaScript 中 new 的机制也和那些语言一样。然而，JavaScript 中 new 的机制实 际上和面向类的语言完全不同。<br>首先我们重新定义一下 JavaScript 中的“构造函数” 。在 JavaScript 中，构造函数只是一些 使用 new 操作符时被调用的函数。它们并不会属于某个类，也不会实例化一个类。实际上， 它们甚至都不能说是一种特殊的函数类型，它们只是被 new 操作符调用的普通函数而已。<br>所以，包括内置对象函数（比如 Number(..)，详情请查看第 3 章）在内的所有函数都可 以用 new 来调用，这种函数调用被称为构造函数调用。这里有一个重要但是非常细微的区 别：实际上并不存在所谓的“构造函数”，只有对于函数的“构造调用”。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/23/new%E7%9A%84%E5%8E%9F%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bind、call、apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/">bind、call、apply</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/" class="archive-article-date">
-  	<time datetime="2020-02-22T05:01:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>bind()、call()、apply()都是用来改变this的指向。</p>
-<p>其中call()和apply()的不同只是参数书写方式不同。</p>
-<p><strong>一 、bind</strong><br>特点：</p>
-<p>1.返回原函数的拷贝，我们称这个拷贝的函数为绑定函数<br>2.将函数中的this固定为调用bind方法时的第一个参数，所以称之为绑定函数。注意是名词而非动词。<br>3.以后无论由哪个对象调用绑定函数，绑定函数中的this依然由当时调用的bind方法的一个参数决定，不会改变。<br>4.如果绑定函数作为构造函数来使用，那么已经固定了的this将不会生效，此时构造函数中的this依然为实例对象。<br>5.调用bind方法时的第二个参数做为绑定函数的第一个参数，称之为预设参数，调用绑定函数时的第一个参数则排在预设参数后面<br>6.无论使用任何对象调用bind方法时如果不传参数、第一个参数为undefined、第一个参数为null时，绑定函数中的this指向window对象</p>
-<p>作用：<br>1.拷贝一个目标函数<br>2.改变绑定函数运行时的this指针</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/22/bind%E3%80%81call%E3%80%81apply/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -935,8 +333,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

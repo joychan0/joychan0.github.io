@@ -147,6 +147,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Math对象的扩展" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/">Math对象的扩展</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/" class="archive-article-date">
+  	<time datetime="2020-04-01T02:24:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Math对象的扩展"><a href="#Math对象的扩展" class="headerlink" title="Math对象的扩展"></a>Math对象的扩展</h2><h4 id="1-Math-trunc"><a href="#1-Math-trunc" class="headerlink" title="1.Math.trunc()"></a>1.Math.trunc()</h4><p>Math.trunc方法用于去除一个数的小数部分，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(4.1)  //4</span><br><span class="line">Math.trunc(4.9)  //9</span><br><span class="line">Math.trunc(-4.1) //-4</span><br><span class="line">Math.trunc(-4.9) //-4</span><br><span class="line">Math.trunc(-0.1234) //-0</span><br></pre></td></tr></table></figure>
+<p>对于空值和无法截取整数的值，返回NaN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(NaN)  //NaN</span><br><span class="line">Math.trunc(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.trunc()    //NaN</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-Math-sign"><a href="#2-Math-sign" class="headerlink" title="2.Math.sign()"></a>2.Math.sign()</h4><p>Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值。会先将其转成数值</p>
+<p>其返回值有 5 种情况。<br>参数为正数，返回＋l;<br>参数为负数，返回－1;<br>参数为 0，返回 0;<br>参数为－0，返回－0;<br>其他值，返回 NaN。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Math.sign(-5) // -1 </span><br><span class="line">Math.sign(5) // +l </span><br><span class="line">Math.sign(O) // +O </span><br><span class="line">Math.sign(-0) // -0 </span><br><span class="line">Math.sign(NaN) //NaN</span><br><span class="line">Math.sign(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.sign()    //NaN。</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Math-cbrt"><a href="#3-Math-cbrt" class="headerlink" title="3.Math.cbrt()"></a>3.Math.cbrt()</h4><p>Math.cbrt方法用于计算一个数的立方根</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Math.cbrt(1)  //1</span><br><span class="line">Math.cbrt(-1) //-1</span><br><span class="line">Math.cbrt(0)  //0</span><br><span class="line">Math.cbrt(2)  //1.2599210498.....</span><br></pre></td></tr></table></figure>
+<p>对于非数值，Math.cbrt也是先使用Number方法将其转为数值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.cbrt(&apos;8&apos;)  //2</span><br><span class="line">Math.cbrt(&apos;hello&apos;) //NaN</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Math-clz32"><a href="#4-Math-clz32" class="headerlink" title="4.Math.clz32()"></a>4.Math.clz32()</h4><p>Math.clz32方法返回一个数的32位无符号整数形式有多少个前导0</p>
+<h4 id="5-Math-imul"><a href="#5-Math-imul" class="headerlink" title="5.Math.imul()"></a>5.Math.imul()</h4><p>Math.imul方法返回两个数以32位带符号整数形式相乘的结果，返回的也是一个32位的带符号整数</p>
+<h4 id="6-Math-fround"><a href="#6-Math-fround" class="headerlink" title="6.Math.fround()"></a>6.Math.fround()</h4><p>Math.fround方法返回一个数的单精度浮点数形式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.fround(0)  //0</span><br><span class="line">Math.fround(1)  //1</span><br><span class="line">Math.fround(1.337)  //1.3370000123</span><br><span class="line">Math.fround(1.5)  //1.5</span><br><span class="line">Math.fround(NaN)  //NaN</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-Math-hypot"><a href="#7-Math-hypot" class="headerlink" title="7.Math.hypot()"></a>7.Math.hypot()</h4><p>Math.hypot方法返回所有参数的平方和的平方根</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.hypot(3,4)  //5    3^2+4^2=5^2</span><br><span class="line">Math.hypot(3,4,5) //7.0710678....</span><br><span class="line">Math.hypot()     //0</span><br><span class="line">Math.hypot(NaN)  //NaN</span><br><span class="line">Math.hypot(3,4,&apos;foo&apos;) //NaN</span><br></pre></td></tr></table></figure>
+<h4 id="8-对数方法"><a href="#8-对数方法" class="headerlink" title="8.对数方法"></a>8.对数方法</h4><p>ES6新增4个对数相关方法<br>Math.expm1()<br>Math.log1p()<br>Math.log10()<br>Math.log2()</p>
+<h4 id="9-双曲函数方法"><a href="#9-双曲函数方法" class="headerlink" title="9.双曲函数方法"></a>9.双曲函数方法</h4><p>Math.sinh()<br>Math.cosh()<br>Math.tanh()<br>Math.asinh()<br>Math.acosh()<br>Math.atanh(x)</p>
+<h4 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符"></a>指数运算符</h4><p>2 * * 2   //4<br>2 * * 3  //8<br>a * * =2 等同于a= a*a</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-最近面试题目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -807,87 +904,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E9%AB%98%E5%AE%BD%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-未知宽高元素水平垂直居中实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">已知宽高元素水平垂直居中实现</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-03-01T06:43:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在解决未知宽高元素水平或垂直居中之前，先来看一下已知宽高的水平垂直居中</p>
-<p>1.使用自适应边界（auto margin）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				margin: auto;</span><br><span class="line">				background: bisque;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>2.负边界解决方案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#app&#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 800px;</span><br><span class="line">				position: relative;</span><br><span class="line">			&#125;</span><br><span class="line">			.flag&#123;</span><br><span class="line">				background: red;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 5px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				top: 50%;</span><br><span class="line">			&#125;</span><br><span class="line">			.A&#123;</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				left: 50%;</span><br><span class="line">				top: 50%;</span><br><span class="line">				margin: -100px 0px 0px -100px;</span><br><span class="line">				background: bisque;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;flag&quot;&gt;</span><br><span class="line">				</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;A&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/img/0301_1.jpg" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
         </p>
       
 
