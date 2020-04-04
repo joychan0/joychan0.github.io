@@ -8,12 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>尾调用优化 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="什么是尾调用？尾调用是函数式编程一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数最后一步是调用另一个函数 123function f(x)&amp;#123;	return g(x);&amp;#125; &#x2F;&#x2F;这就是尾调用 以下情况不属于尾调用">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
 <meta property="og:title" content="尾调用优化">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;04&#x2F;%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
+<meta property="og:description" content="什么是尾调用？尾调用是函数式编程一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数最后一步是调用另一个函数 123function f(x)&amp;#123;	return g(x);&amp;#125; &#x2F;&#x2F;这就是尾调用 以下情况不属于尾调用">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-04T02:33:47.204Z">
+<meta property="og:updated_time" content="2020-04-04T05:37:29.021Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -166,7 +169,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="什么是尾调用？"><a href="#什么是尾调用？" class="headerlink" title="什么是尾调用？"></a>什么是尾调用？</h4><p>尾调用是函数式编程一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数最后一步是调用另一个函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function f(x)&#123;</span><br><span class="line">	return g(x);</span><br><span class="line">&#125; //这就是尾调用</span><br></pre></td></tr></table></figure>
+<p>以下情况不属于尾调用<a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function f(x)&#123;</span><br><span class="line">	let y =g(x);</span><br><span class="line">	return y; //虽然作用与第一个示例代码一样，但不属于尾调用，g(x)执行后还有一个赋值操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function f(x)&#123;</span><br><span class="line">	return g(x)+1; //调用g(x)后有一个+操作，不算尾调用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function f(x)&#123;</span><br><span class="line">	g(x);</span><br><span class="line">&#125;//等同于下面代码</span><br><span class="line">function f(x)&#123;</span><br><span class="line">	g(x);</span><br><span class="line">	return undefined;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>** 尾调用不一定出现在函数尾部，只要是最后一步操作即可 **</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function f(x)&#123;</span><br><span class="line">	if(x&gt;0)&#123;</span><br><span class="line">		return m(x);</span><br><span class="line">	&#125;</span><br><span class="line">	return n(x);</span><br><span class="line">&#125;//函数m和n都属于尾调用，因为它们都是函数f的最后一步操作</span><br></pre></td></tr></table></figure>
+
+<h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h4><p>尾调用之所以与其他调用不同，就在于其特殊的调用位置。<br>我们知道，函数调用会在内存形成一个“调用记录”， 又称“调用帧”（call frame），保存调 用位置和内部变量等信息。如果在函数 A 的内部调用函数 B，那么在 A 的调用帧上方还会形成一 个 B 的调用帧。等到 B 运行结束，将结果返回到 A, B 的调用帧才会消失。 如果函数 B 内部还调 用函数 c，那就还有一个 c 的调用帧，以此类推。所有的调用帧就形成一个“调用棋”（call stack）。<br>尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用帧，因为调用位置、 内部变量等信息都不会再用到了，直接用内层函数的调用帧取代外层函数的即可。<br>只有不再用到外层函数的内部变量，内层函数的调用帧才会取代外层函数的调用帧，否则 就无法进行“尾调用优化”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function addOne(a)&#123;</span><br><span class="line">	var one = 1;</span><br><span class="line">	function inner(b)&#123;</span><br><span class="line">		return b+one;</span><br><span class="line">	&#125;</span><br><span class="line">	return inner (a);</span><br><span class="line">&#125;//上面的函数不会进行尾调用优化，因为内层函数 inner 用到了外层函数 addOne 的内部变 量。ne.</span><br></pre></td></tr></table></figure>
+<h4 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h4><p>函数调用自身称为递归。如果尾调用自身就称为尾递归。 递归非常耗费内存，因为需要同时保存成百上千个调用帧，很容易发生“棋世出”错误（stack overflow）。但对于尾递归来说，由于只存在一个调用帧，所以永远不会发生“枝溢出”错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function factorial(n)&#123;</span><br><span class="line">	if(n===1) return 1;</span><br><span class="line">	return n* factorial(n-1);</span><br><span class="line">&#125;//计算n的阶乘</span><br></pre></td></tr></table></figure>
+<p>上面的代码是一个阶乘函数，计算 n 的阶乘，最多需要保存 n 个调用记录，复杂度为 O(n）。 如果改写成尾递归，只保留一个调用记录，则复杂度为 0(1）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function factorial(n,total)&#123;</span><br><span class="line">	if(n===1) return total;</span><br><span class="line">	return factorial(n-1,n*total);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>ES6 的尾调用优化只在严格模式下开启，正常模式下是无效的。</strong></p>
+
       
 
       
@@ -174,6 +194,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
