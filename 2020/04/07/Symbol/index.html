@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | welcome</title>
+  <title>Symbol | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="welcome">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="Symbol的概念及其作用ES5 的对象属性名都是字符串，这容易造成属性名的冲突。比如，我们使用了一个他人提 供的对象， 但又想为这个对象添加新的方法 C mixin 模式〉，新方法的名字就有可能与现有方法 产生冲突。 如果有一种机制，能够保证每个属性的名字都是独一无二的就好了，这样就能从根 本上防止属性名冲突。这就是 ES6 号｜入类型 Symbol 的原因。ES6 引入了一种新的原始数据类型">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Symbol">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;07&#x2F;Symbol&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
+<meta property="og:description" content="Symbol的概念及其作用ES5 的对象属性名都是字符串，这容易造成属性名的冲突。比如，我们使用了一个他人提 供的对象， 但又想为这个对象添加新的方法 C mixin 模式〉，新方法的名字就有可能与现有方法 产生冲突。 如果有一种机制，能够保证每个属性的名字都是独一无二的就好了，这样就能从根 本上防止属性名冲突。这就是 ES6 号｜入类型 Symbol 的原因。ES6 引入了一种新的原始数据类型">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-07T03:05:33.446Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -145,36 +149,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Symbol" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Symbol
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/07/Symbol/" class="archive-article-date">
+
+        
+        <a href="/2020/04/07/Symbol/" class="archive-article-date">
   	<time datetime="2020-04-07T02:12:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/07/Symbol/">Symbol</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Symbol的概念及其作用"><a href="#Symbol的概念及其作用" class="headerlink" title="Symbol的概念及其作用"></a>Symbol的概念及其作用</h4><p>ES5 的对象属性名都是字符串，这容易造成属性名的冲突。比如，我们使用了一个他人提 供的对象， 但又想为这个对象添加新的方法 C mixin 模式〉，新方法的名字就有可能与现有方法 产生冲突。 如果有一种机制，能够保证每个属性的名字都是独一无二的就好了，这样就能从根 本上防止属性名冲突。这就是 ES6 号｜入类型 Symbol 的原因。<br>ES6 引入了一种新的原始数据类型 Symbol，表示独一无二的值。它是 JavaScript 语言的第 7 种数据类型，前 6 种分别是： Undefined、Null、布尔值（Boolean）、字符串 C String）、数值（Number) 和对象（Object）。<br>Symbol 值通过 Symbol 函数生成。 也就是说，对象的属性名现在可以有两种类型： 一种是 原来就有的字符串，另一种就是新增的 Symbol 类型。 只要属性名属于 Symbol 类型， 就是独一 无二的，可以保证不会与其他属性名产生冲突。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let s=Symbol();</span><br><span class="line"></span><br><span class="line">typeof s //&quot;Symbol&quot;</span><br></pre></td></tr></table></figure>
+<p>Symbol 函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控 制台显示，或者转为字符串时比较容易区分。<a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a=Symbol(&apos;foo&apos;);</span><br><span class="line">var b=Symbol(&apos;bar&apos;);</span><br><span class="line"></span><br><span class="line">a// Symbol(&apos;foo&apos;)</span><br><span class="line">b// Symbol(&apos;bar&apos;)</span><br><span class="line"></span><br><span class="line">a.toString(); //Symbol(&apos;foo&apos;)</span><br><span class="line">b.toString(); //Symbol(&apos;bar&apos;)</span><br></pre></td></tr></table></figure>
+<p>上面的代码中， sl 和 s2 是两个 Symbol 值。如果不加参数，它们在控制台的输出都是 Symbol （），不利于区分。有了参数以后，就等于为它们加上了描述，输出时就能够分清到底 是哪－个值。<br>如果 Symbol 的参数是一个对象，就会调用该对象的 toString 方法，将其转为字符串， 然后才生成一个 Symbol 值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const obj=&#123;</span><br><span class="line">	toString()&#123;</span><br><span class="line">		return &apos;abc&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">const sym=Symbol(obj);</span><br><span class="line">sym //Symbol(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+<p>Symbol 函数的参数只表示对当前 Symbol 值的描述，因此相同参数的 Symbol 函数的返 回值是不相等的 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var s1=Symbol();</span><br><span class="line">var s2=Symbol();</span><br><span class="line"></span><br><span class="line">s1===s2  //false  上面的代码中， sl 和 s2 都是 Symbol 函数的返回值，而且参数相同，但是它们是不相等的。</span><br></pre></td></tr></table></figure>
+<p>Symbol 值不能与其他类型的值进行运算，否则会报错。但是， Symbol 值可以显式转为字符串。另外， Symbol 值也可以转为布尔值，但是不能转为数值。</p>
+<p>** 作为属性名的Symbol **<br>由于每一个 Symbol 值都是不相等的，这意味着 Symbol 值可以作为标识符用于对象的属性名，保证不会出现同名的属性。 这对于一个对象由多个模块构成的情况非常有用，能防止某一 个键被不小心改写或覆盖。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var mySymbol =Symbol();</span><br><span class="line">//第一种写法</span><br><span class="line">var a=&#123;&#125;;</span><br><span class="line">a[mySymbol]=&apos;hello&apos;;</span><br><span class="line">//第二种写法</span><br><span class="line">var a=&#123;</span><br><span class="line">	[mySymbol]: &apos;hello&apos; </span><br><span class="line">&#125;</span><br><span class="line">//第三种写法</span><br><span class="line">var a=&#123;&#125;;</span><br><span class="line">Object.defineProperty(a,mySymbol,&#123;value: &apos;hello&apos;&#125;);</span><br></pre></td></tr></table></figure>
+<p>注意，Symbol值作为对象属性名时不能使用点运算符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var mySymbol=Symbol();</span><br><span class="line">var a=&#123;&#125;;</span><br><span class="line"></span><br><span class="line">a.mySymbol=&apos;hello&apos;;</span><br><span class="line">a[mySymbol] //undefined</span><br><span class="line">a[&apos;mySymbol&apos;] //&apos;hello&apos;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中 ， 因为点运算符后面总是字符串，所以不会读取 mySymbol 作为标识名所指 代的值，导致 a 的属性名实际上是一个字符串 ， 而不是一个 Symbol 值。<br>同理，在对象的内部， 使用 Symbol 值定义属性时， Symbol 值必须放在方括号中 。<br>常量使用 Symbol 值的最大好处就是，其他任何值都不可能有相同的值了，因此可以保证 上面的 switch 语句按设计的方式工作。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,353 +202,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/07/Symbol/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/04/%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-04-04T02:33:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/04/%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">尾调用优化</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/04/%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/">尾调用优化</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/" class="archive-article-date">
-  	<time datetime="2020-04-01T02:24:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/">Math对象的扩展</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/24/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-03-24T07:12:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/24/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">最近面试题目总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-03-12T06:26:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/">ES6基本语法（二）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-12T05:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">ES6基本语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/08/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-03-08T07:07:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/">jQuery选择器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/04/BOM/" class="archive-article-date">
-  	<time datetime="2020-03-04T02:46:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/BOM/">BOM</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/02/BFC%E5%92%8CIFC/" class="archive-article-date">
-  	<time datetime="2020-03-02T06:50:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/BFC%E5%92%8CIFC/">BFC和IFC</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/%E5%B8%B8%E8%A7%81%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2020-03-01T13:35:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/%E5%B8%B8%E8%A7%81%E5%B8%83%E5%B1%80/">常见布局</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -556,8 +324,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
