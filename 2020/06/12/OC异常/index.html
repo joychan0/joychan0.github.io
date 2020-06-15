@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>welcome</title>
+  <title>OC异常 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="welcome">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="OC中的异常什么是异常？ 废话，异常就是bugCocoa使用NSException类来表示异常。Cocoa要求所有的异常必须是NSException类型的异常，虽然可以用其他对象来抛出异常，但是Cocoa并不会处理它们。此外，可以创建NSException的子类来作为自己的异常。 与异常有关的关键字@try ：定义用来测试的代码块以决定是否抛出异常@catch() : 定义用来处理已抛出异常的代码">
+<meta name="keywords" content="Objective-C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OC异常">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;12&#x2F;OC%E5%BC%82%E5%B8%B8&#x2F;index.html">
 <meta property="og:site_name" content="welcome">
+<meta property="og:description" content="OC中的异常什么是异常？ 废话，异常就是bugCocoa使用NSException类来表示异常。Cocoa要求所有的异常必须是NSException类型的异常，虽然可以用其他对象来抛出异常，但是Cocoa并不会处理它们。此外，可以创建NSException的子类来作为自己的异常。 与异常有关的关键字@try ：定义用来测试的代码块以决定是否抛出异常@catch() : 定义用来处理已抛出异常的代码">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-06-12T11:00:11.779Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="welcome" type="application/atom+xml">
@@ -145,101 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-OC对象分类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-OC异常" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/15/OC%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB/">OC对象的分类</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/15/OC%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2020-06-15T14:23:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="OC对象的分类"><a href="#OC对象的分类" class="headerlink" title="OC对象的分类"></a>OC对象的分类</h1><p>OC对象主要分为三种<br>1.instance对象—-实例对象<br>2.class对象—-类对象<br>3.meta-class对象—-元类对象</p>
-<h2 id="instance对象"><a href="#instance对象" class="headerlink" title="instance对象"></a>instance对象</h2><p>实例对象就是通过类alloc出来的对象<br>实例对象在内存中存储的信息包括：<br>-&gt; isa指针   —-指向类对象<br>-&gt; 其他成员变量的值</p>
-<h2 id="class对象"><a href="#class对象" class="headerlink" title="class对象"></a>class对象</h2><p>每个类在内存中有且只有一个class对象。<br>可以通过以下方式获取类对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class cls1 = [p class];</span><br><span class="line">Class cls2 = [Person class];</span><br><span class="line">Class cls3 = object_getClass(p);</span><br></pre></td></tr></table></figure>
-<p>类对象在内存中存储的信息主要包括：<br>-&gt; isa指针<br>-&gt; superclass指针<br>-&gt; 类的属性信息,类的对象方法信息<br>-&gt; 类的协议信息,类的成员成员变量</p>
-<h2 id="meta-class"><a href="#meta-class" class="headerlink" title="meta-class"></a>meta-class</h2><p>每个类在内存中有且只有一个元类对象,可以通过一下方式获得:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class metaCls = object_getClass([Person class]);</span><br></pre></td></tr></table></figure>
-<p>元类对象和类对象的内存结构是一样的，但用途不一样，元类对象在内存中存储的信息主要包括：<br>-&gt; isa指针<br>-&gt; 类方法信息</p>
-<p><img src="C:%5CUsers%5C73484%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200615225306096.png" alt="image-20200615225306096"></p>
-<p>instance的isa指向class，当调用对象方法时，通过instance的isa找的class，在class中找到对象方法的实现调用。<br> class 的isa 指向meta-class，当调用类方法时，通过class的isa找到meta-class，在meta-class中找到类方法的实现调用。</p>
-<p><img src="C:%5CUsers%5C73484%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200615225427357.png" alt="image-20200615225427357"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2770865-d21a52b008dcebab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/982/format/webp" alt="img"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Objective-C</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/15/OC%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-OC异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/12/OC%E5%BC%82%E5%B8%B8/">OC异常</a>
+    <h1 class="article-title" itemprop="name">
+      OC异常
     </h1>
   
 
@@ -276,16 +193,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/12/OC%E5%BC%82%E5%B8%B8/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/12/OC%E5%BC%82%E5%B8%B8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/06/15/OC%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          OC对象的分类
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/12/OC%E5%AD%A6%E4%B9%A0-06-12/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OC学习-06-12</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -305,647 +290,14 @@
 
 
 
-
-  
-    <article id="post-OC学习-06-12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/12/OC%E5%AD%A6%E4%B9%A0-06-12/">OC学习-06-12</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/12/OC%E5%AD%A6%E4%B9%A0-06-12/" class="archive-article-date">
-  	<time datetime="2020-06-12T01:33:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="OC中的内存管理"><a href="#OC中的内存管理" class="headerlink" title="OC中的内存管理"></a>OC中的内存管理</h1><p>为什么要进行内存管理？</p>
-<p>每个计算机上的资源都是一定的，如果我们使用了资源却不释放他，最终将耗尽资源。<br>我们要确保使用时分配资源，结束时释放内存，如果我们只分配资源而不释放资源，就会发生<strong>内存泄露</strong>，程序的内存占用量不断增加，最终会被耗尽并导致程序崩溃。</p>
-<p>内存管理的对象？</p>
-<p>任何继承了NSObject的对象都需要进行内存管理。<br>而其他数据类型（int、char、float、 double、struct、enum）不需要进行内存管理</p>
-<p>原因：继承NSObject的对象存放在操作系统的堆，非OC对象存放在操作系统的栈里面。操作系统的栈由操作系统自动分配释放。ps：操作系统没学好以后需要系统看一下。</p>
-<h2 id="对象生命周期"><a href="#对象生命周期" class="headerlink" title="对象生命周期"></a>对象生命周期</h2><p>对象的生命周期包括诞生（使用alloc或new方法实现）、生存（接受消息并执行操作）、交友（通过复合向方法传递参数）、以及最终死去（被释放掉）。<br><strong>当生命周期结束时，内存会被回收以供新的对象使用。</strong></p>
-<p>问题：怎么样判断对象生命周期该结束了？<br>答:Cocoa采用了引用计数的一种技术.</p>
-<h2 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h2><p>当有一段代码需要访问一个对象的时候，该对象的保留计数就加1，当这段代码结束了对该对象的访问的时候，保留计数就减1，<strong>当一个对象的保留计数为0，就表示没有代码访问该对象，该对象就要被销毁，内存被系统回收供其他对象使用</strong></p>
-<p>当使用alloc、new或者通过copy消息创建一个对象时，该对象的保留计数器被重置为1，要增加对象的保留计数器的值，可以给对象发送retain消息，要减少对象保留计数器的值，可以给对象发送release消息，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//retain release retainCount的方法声明</span><br><span class="line">- (void) retain;</span><br><span class="line">- (oneway void) release; //oneway告诉系统在方法返回之前不要阻塞调用线程，不懂意思，同时调用导致计数器的数值乱了？</span><br><span class="line">- (NSUInteger) retainCount;</span><br></pre></td></tr></table></figure>
-
-<h2 id="自动释放池"><a href="#自动释放池" class="headerlink" title="自动释放池"></a>自动释放池</h2><p>Cocoa有一个自动释放池（autorelease pool）的概念<br>NSObject提供了一个叫做autorelease的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (id) autorelease;</span><br></pre></td></tr></table></figure>
-<p>该方法预先设定了一条会在未来某个时间发送的release消息，其返回值是接受这条消息的对象。</p>
-<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><p>苹果公司采用的一种方案叫做自动引用技术（automatic reference counting，ARC）</p>
-<p>ARC判断一个对象是否需要释放不是通过引用技术来进行判断的，而是通过强指针来进行判断。<br>强指针： 默认所有对象的指针变量都是强指针， 被__strong修饰的指针。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person *p1 = [[Person alloc] init];</span><br><span class="line">__strong Person *p2 = [[Person alloc] init];</span><br></pre></td></tr></table></figure>
-<p>弱指针： 被__weak 修饰的指针</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__weak Person *p = [[Person alloc] init];</span><br></pre></td></tr></table></figure>
-<p>ARC如何通过强指针来判断?<br>只要还有一个强指针变量指向对象，对象就会保存在内存中。</p>
-<p>ARC的使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">	//不用写release，main函数执行完毕后p会被自动释放</span><br><span class="line">	Person *p = [[Person alloc] init];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>ARC 不允许调用对象的 release 方法  不允许调用atutorelease方法 重写父类的dealloc方法时，不能再调用 [super dealloc];</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">	@autoreleasepool &#123;</span><br><span class="line">		Person *p = [[Person alloc] init];</span><br><span class="line">	&#125;//执行完局部变量p释放</span><br><span class="line">	//由于没有强指针指向person对象，对象释放</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">	@autoreleasepool &#123;</span><br><span class="line">		Person *p = [[Person alloc] init];</span><br><span class="line">		p = nil;</span><br><span class="line">		//由于p的指向被改变了，所以对象没有了强指针引用，对象释放</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>弱指针不能保存新创建的对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">	@autoreleasepool &#123;</span><br><span class="line">		__weak Person *p = [[Person alloc] init];</span><br><span class="line">		//p 是弱指针 对象没有强指针引用，对象被立刻释放。</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>ARC 的循环引用问题<br>如果A拥有B，B拥有A 两个都是强引用，那么内存永远都无法得到释放，为了解决这个问题，某一方必须使用若引用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@interface Person: NSObject</span><br><span class="line"></span><br><span class="line">@property (nonatomic, strong) Dog *dog;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface Dog: NSObject</span><br><span class="line"></span><br><span class="line">@property (nonatomic, strong) Person *owner;</span><br><span class="line">//错误写法，两个对象互相强引用会造成内存泄露，建议使用weak</span><br><span class="line">@property (nonatomic, weak) Person *owner</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Objective-C</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/12/OC%E5%AD%A6%E4%B9%A0-06-12/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Symbol" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/Symbol/">Symbol</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/07/Symbol/" class="archive-article-date">
-  	<time datetime="2020-04-07T02:12:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Symbol的概念及其作用"><a href="#Symbol的概念及其作用" class="headerlink" title="Symbol的概念及其作用"></a>Symbol的概念及其作用</h4><p>ES5 的对象属性名都是字符串，这容易造成属性名的冲突。比如，我们使用了一个他人提 供的对象， 但又想为这个对象添加新的方法 C mixin 模式〉，新方法的名字就有可能与现有方法 产生冲突。 如果有一种机制，能够保证每个属性的名字都是独一无二的就好了，这样就能从根 本上防止属性名冲突。这就是 ES6 号｜入类型 Symbol 的原因。<br>ES6 引入了一种新的原始数据类型 Symbol，表示独一无二的值。它是 JavaScript 语言的第 7 种数据类型，前 6 种分别是： Undefined、Null、布尔值（Boolean）、字符串 C String）、数值（Number) 和对象（Object）。<br>Symbol 值通过 Symbol 函数生成。 也就是说，对象的属性名现在可以有两种类型： 一种是 原来就有的字符串，另一种就是新增的 Symbol 类型。 只要属性名属于 Symbol 类型， 就是独一 无二的，可以保证不会与其他属性名产生冲突。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let s=Symbol();</span><br><span class="line"></span><br><span class="line">typeof s //&quot;Symbol&quot;</span><br></pre></td></tr></table></figure>
-<p>Symbol 函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控 制台显示，或者转为字符串时比较容易区分。
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/Symbol/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-尾调用优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/">尾调用优化</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/04/%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-04-04T02:33:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="什么是尾调用？"><a href="#什么是尾调用？" class="headerlink" title="什么是尾调用？"></a>什么是尾调用？</h4><p>尾调用是函数式编程一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数最后一步是调用另一个函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function f(x)&#123;</span><br><span class="line">	return g(x);</span><br><span class="line">&#125; //这就是尾调用</span><br></pre></td></tr></table></figure>
-<p>以下情况不属于尾调用
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Math对象的扩展" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/">Math对象的扩展</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/" class="archive-article-date">
-  	<time datetime="2020-04-01T02:24:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Math对象的扩展"><a href="#Math对象的扩展" class="headerlink" title="Math对象的扩展"></a>Math对象的扩展</h2><h4 id="1-Math-trunc"><a href="#1-Math-trunc" class="headerlink" title="1.Math.trunc()"></a>1.Math.trunc()</h4><p>Math.trunc方法用于去除一个数的小数部分，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(4.1)  //4</span><br><span class="line">Math.trunc(4.9)  //9</span><br><span class="line">Math.trunc(-4.1) //-4</span><br><span class="line">Math.trunc(-4.9) //-4</span><br><span class="line">Math.trunc(-0.1234) //-0</span><br></pre></td></tr></table></figure>
-<p>对于空值和无法截取整数的值，返回NaN</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc(NaN)  //NaN</span><br><span class="line">Math.trunc(&apos;foo&apos;)  //NaN</span><br><span class="line">Math.trunc()    //NaN</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/01/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-最近面试题目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/24/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">最近面试题目总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/24/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-03-24T07:12:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>总结几个最近面试遇见比较多和自己不会的题目</p>
-<h5 id="1-http的相关内容-之前就没学过，面试全说不会"><a href="#1-http的相关内容-之前就没学过，面试全说不会" class="headerlink" title="1.http的相关内容 之前就没学过，面试全说不会"></a>1.http的相关内容 之前就没学过，面试全说不会</h5><h5 id="2-闭包含义-优缺点"><a href="#2-闭包含义-优缺点" class="headerlink" title="2.闭包含义  优缺点"></a>2.闭包含义  优缺点</h5><p>闭包是指有权访问另一个函数作用域中的变量的函数<br>优点<br>1.可以读取函数内部的变量<br>2.可以让这些局部变量保存在内存中，实现变量数据共享。<br>缺点<br>1.由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2.闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/24/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6基本语法（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/">ES6基本语法（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-03-12T06:26:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>函数</strong><br>箭头函数和this</p>
-<p>ES6允许使用“箭头”（=&gt;）定义函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var f =(v)=&gt;&#123;</span><br><span class="line">	return v</span><br><span class="line">&#125;;</span><br><span class="line">var f =function (v)&#123;</span><br><span class="line">	return v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其实就是 省略function 在括号后面添加箭头</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6基本语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">ES6基本语法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-12T05:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>变量</strong><br>新的声明方法</p>
-<p>let：ES6 新增了 let 命令，用于声明变量。其用法类似于 var，但是所声明的变量只在 let 命令所在的代码块内有效。<br>const：const 声明一个只读的常量。 一旦声明，常量的值就不能改变。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	var a=1;</span><br><span class="line">	let b=2;</span><br><span class="line">&#125;</span><br><span class="line">//let所声明的变量只在命令所在的代码块内有效</span><br><span class="line">alert(a);//1</span><br><span class="line">alert(b);// ReferenceError: a is not defined</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">var a=2;//正常，因为var 有变量提升，可以解析为 var a=1; a=2;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	let a=1;</span><br><span class="line">	let a=2; //报错 let不存在变量提升，不允许重复声明。另外变量不允许在声明前使用，var声明变量的可以在声明前使用，值为undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var tmp=123;</span><br><span class="line">if(true)&#123;</span><br><span class="line">	tmp=&apos;abc&apos;;//ReferenceError 只要块级作用域存在let命令，它所声明的变量就会绑定这个区域，不再受外部的影响</span><br><span class="line">	let tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>const命令
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/12/ES6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jQuery选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/">jQuery选择器</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/08/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-03-08T07:07:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>基本选择器</strong></p>
-<p>$(‘*’)选择全部的元素<br>$(‘tagname’)选择元素名为tagname的元素<br>$(‘.class’)选择类为class的元素<br>$(‘#id’)选择id为id的元素<br>$(‘div,span’)选择所有的div和span元素</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -968,8 +320,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
